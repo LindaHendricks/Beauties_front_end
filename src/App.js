@@ -1,23 +1,32 @@
-import logo from './logo.svg';
+// import React, {useState, useEffect} from 'react';
+import Header from './Header';
+import Search from './Search';
 import './App.css';
+import ImageContainer from './ImageContainer';
+import CreativeProfile from './CreativeProfile';
+import SavedImageContainer from './SavedImageContainer';
+import LikedImageContainer from './LikedImageContainer';
+// import ImageCard from './ImageCard';
+// import NewCommentForm from './NewCommentForm';
+
 
 function App() {
+
+
+  // const displayedImages = images.filter((image) => {
+  //   return image.name.toLowerCase().includes(searchTerm.toLowerCase());
+  // });
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Search />
+        <ImageContainer/>
+        <comment/>
+      <CreativeProfile />
+      <SavedImageContainer/>
+      <LikedImageContainer />
+
     </div>
   );
 }
