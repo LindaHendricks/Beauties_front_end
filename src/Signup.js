@@ -1,8 +1,24 @@
-function Signup() {
+import React, {useState} from 'react';
+import SignupForm from './SignupForm';
+
+
+
+function Signup({addCreative,setCreatives}) {
+
+    const [isClicled, setSignupForm] = useState(false)
+
+function handleClick () {
+setSignupForm(!isClicled)
+}
+
+
     return (
          
         <div>
-           <h2>Signup Form</h2>
+
+           <button onClick={handleClick} >Sign up !</button>
+           {isClicled? <SignupForm addCreative={addCreative} setCreatives={setCreatives} /> : null}
+
         </div>
        
     )

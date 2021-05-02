@@ -30,7 +30,7 @@ function UplaodImageForm({addImage}) {
        body: JSON.stringify(newImage)   
       })
       .then(response => response.json())
-      .then(response => console.log(response))
+      .then(response => addImage(response))
     }
     
   

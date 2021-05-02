@@ -1,8 +1,7 @@
 import React, {useState} from 'react';
 
 
-function EditCreativeProfileForm({id,setUpdatedProfile}) {
-console.log(id)
+function SignupForm ({addCreative, setCreatives}) {
 
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -17,11 +16,11 @@ console.log(id)
     const [accountType, setAccountType] = useState(false);
 
   
-    function handleEditSubmit(event) {
+    function handleSubmit(event) {
       event.preventDefault();
-       console.log('clicked')
-      fetch(`http://localhost:3000/creatives/${id}`, {
-        method: 'PATCH',
+       
+      fetch(`http://localhost:3000/creatives`, {
+        method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
@@ -36,18 +35,18 @@ console.log(id)
         location: location, 
         bio: bio,
         portfolio: portfolio, 
-        accountType: accountType, 
+        accountType: accountType,
         }),
       })
       .then(r => r.json())
-      .then(UpdatedData => setUpdatedProfile(UpdatedData))
+      .then(signupData => setCreatives(signupData))
 
     }
     
-   
+
     return (
-         
-        <form onSubmit={handleEditSubmit}>
+
+        <form onSubmit={handleSubmit}>
 
          <h3>Create an Account</h3>
 
@@ -152,8 +151,6 @@ console.log(id)
       <input type="submit" value="submit" />
     </form>
   );
-       
-        
 }
- 
-export default EditCreativeProfileForm;
+
+export default SignupForm;

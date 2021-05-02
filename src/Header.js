@@ -1,23 +1,16 @@
 import Signup from './Signup';
-import Login from './Login';
+import SignIn from './SignIn';
+import React, {useState} from 'react';
 
-function Header() {
+function Header({addCreative, setCreatives, setCurrentCreative}) {
+
     return (
         <div class="header">
-        <a href="#default" class="logo">CompanyLogo</a>
         <h2>Header</h2>
-           <Signup />
-           <Login />
-        <div class="header-right">
-          <a class="active" href="#home">Home</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
-        </div>
+           <Signup  addCreative={addCreative} setCreatives={setCreatives}/>
+           <SignIn setCurrentCreative={setCurrentCreative}/>
       </div>
-        
-           
-        
-       
+ 
     )
         
 }

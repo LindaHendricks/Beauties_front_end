@@ -1,14 +1,12 @@
 
 
-function Comments ({note, image_id, user_id, id, creative_id}) {
-
+function Comments ({note, rating, image_id, user_id, id, creative_id}) {
+console.log(note)
     return (
         <>
-        <p>Test</p>
+        <p>Comments</p>
         <p>{note}</p>
-        <p>{image_id}</p>
-        <p>{creative_id}</p>
-        <p>{user_id}</p>
+        <p>{rating}</p>
         </>
     )
 

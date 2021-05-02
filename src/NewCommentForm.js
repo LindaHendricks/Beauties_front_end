@@ -3,10 +3,10 @@ import React, { useState } from "react";
 import NewCommentsDetailsForm from "./NewCommentsDetailsForm";
 
 
-function NewCommentForm({addComment, id, comments}) {
+function NewCommentForm({setComments,addComment, image_id, comments}) {
 
 
-const formId = id 
+const formId =  image_id
 
 const [note, setNote] = useState('')
 const [rating, setRating] = useState (0)
@@ -21,6 +21,9 @@ function handleSubmit (event) {
     note: note,
     rating: rating
   }
+
+  console.log(creativeInput)
+
 
   fetch(`http://localhost:3000/comments/`, {
     method: 'POST',
@@ -37,12 +40,12 @@ function handleSubmit (event) {
 
   return (
     <>
-    <form id={id} onSubmit={handleSubmit} className="newcomment">
+    <form  image_id={image_id} onSubmit={handleSubmit} className="newcomment">
       <input value={note} onChange={e => setNote(e.target.value)} placeholder="Note" />
       <input value={rating} onChange={e => setRating(e.target.value)} placeholder="Rating" />
       <input type="submit" value="Share your findings" />
     </form>
-    <NewCommentsDetailsForm note={note} rating={rating} comments={comments} id={id}/>
+    <NewCommentsDetailsForm note={note} rating={rating} comments={comments}  image_id={ image_id}/>
     </>
   );
 }
