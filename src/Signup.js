@@ -3,7 +3,7 @@ import SignupForm from './SignupForm';
 
 
 
-function Signup({addCreative,setCreatives}) {
+function Signup({currentCreative,addCreative,setCreatives}) {
 
     const [isClicled, setSignupForm] = useState(false)
 
@@ -17,7 +17,7 @@ setSignupForm(!isClicled)
         <div>
 
            <button onClick={handleClick} >Sign up !</button>
-           {isClicled? <SignupForm addCreative={addCreative} setCreatives={setCreatives} /> : null}
+           {isClicled? <SignupForm currentCreative={currentCreative} addCreative={addCreative} setCreatives={setCreatives} /> : null}
 
         </div>
        

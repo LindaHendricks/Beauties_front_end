@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-function SignInForm(setCurrentCreative) {
+function SignInForm({setCurrentCreative}) {
   const [formData, setFormData] = useState({
     username: "",
     password: "",
@@ -21,15 +21,13 @@ function SignInForm(setCurrentCreative) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"
       },
       body: JSON.stringify(formData),
       
     }) 
       .then((response) => response.json())
-      .then((user) => { 
-        console.log(user.username);
-
-      });
+      .then((user) => console.log(user))
   }
 
   return (

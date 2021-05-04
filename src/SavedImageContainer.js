@@ -1,29 +1,35 @@
 import SavedImageCard from './SavedImageCard';
-// import React, {useEffect,useState} from 'react';
+import React, {useEffect,useState} from 'react';
 
-function SavedImageContainer() {
+function SavedImageContainer({addtoSavedImageList, savedImages, setSavedImages}) {
+
+       
+    useEffect(() => {
+        fetch (`http://localhost:3000/saved_images`)
+        .then(response => response.json())
+        .then(response => setSavedImages(response))
+        },[])
+    
+        const SavedImageList = savedImages.map((savedImage) => {
+           
+            return < SavedImageCard
+            key={savedImage.image.id}
+            id={savedImage.image.id} 
+            title={savedImage.image.title} 
+            picture={savedImage.image.picture} 
+            description={savedImage.image.description}
+            addtoSavedImageList={addtoSavedImageList}
+            setSavedImages={setSavedImages}
+            />
+        })
  
-    // const [savedImages, setSavedImages] = useState([])
-   
-    // useEffect(() => {
-  
-      
-    //     fetch(`http://localhost:3000/saved_images/1`)
-    //    .then(response => response.json())
-    //    .then(response => console.log(response.image))
-    //    },[])
-
-    // //  const savedImagesList = savedImages.map(savedImage => {
-    // //    return <SavedImageCard 
-    // //      user_id={savedImage.user}
-    // //    />
-    // //  })
 
     return (
          
         <div>
-           <h2>SavedImageContainer</h2>
-           <SavedImageCard/>
+           <h2>Your Saved Images</h2>
+           <ul>{SavedImageList}</ul>
+          
         </div>
        
     )

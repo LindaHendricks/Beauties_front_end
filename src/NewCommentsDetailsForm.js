@@ -3,7 +3,7 @@ import Comments from './Comments';
 
 function NewCommentsDetailsForm({comments,note,rating,image_id}) {
 
-console.log(comments)
+
 
   const commentsList = comments.map(comment => {
    

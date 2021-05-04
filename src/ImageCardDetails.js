@@ -2,9 +2,11 @@ import NewCommentForm from './NewCommentForm';
 import React, {useState} from 'react';
 import Comments from './Comments';
 
-function ImageCardDetails({creativeId, image_id, description, addComment, comments}) {
+function ImageCardDetails({title, picture, creativeId, image_id, description, addComment, comments}) {
 
-console.log(creativeId)
+
+
+
 console.log(image_id)
 
     const [isFav, setIsFavorited] = useState(false)
@@ -12,22 +14,55 @@ console.log(image_id)
 
     function handleClickSaved () {
         setIsSaved(!isSaved)
+        const SavedImage = {
+            creative_id: 2, 
+          //   title: title,
+          //   picture: picture,
+          //   description: description,
+            image_id: image_id
+        }
+  
+        console.log(SavedImage)
+  
+          fetch((`http://localhost:3000/saved_images`), {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'Accept': 'application/json'
+              },
+              body: JSON.stringify(SavedImage)
+  
+          })
+          .then(response => response.json())
+          .then(response => console.log(response))
+
     }
 
-    function handlHeartClick(){
-        setIsFavorited (!isFav)
 
-        fetch((`http://localhost:3000/liked_images/`), {
+    function handlHeartClick(){
+      setIsFavorited (!isFav)
+
+      const likedImage = {
+          creative_id: 2, 
+        //   title: title,
+        //   picture: picture,
+        //   description: description,
+          image_id: image_id
+      }
+
+      console.log(likedImage)
+
+        fetch((`http://localhost:3000/liked_images`), {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
                 'Accept': 'application/json'
             },
-            body: JSON.stringify(isFav)
+            body: JSON.stringify(likedImage)
 
         })
         .then(response => response.json())
-        .then(response =>console.log(response))
+        .then(response => console.log(response))
     }
 
     

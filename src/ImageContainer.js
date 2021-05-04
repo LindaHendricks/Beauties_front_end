@@ -4,12 +4,12 @@ import React, {useState, useEffect} from 'react';
 import UplaodImageForm from './UplaodImageForm';
 import Comments from './Comments';
 
-function ImageContainer({addComments, comments, addImage,images, setImages,creatives,ImageCards}) {
+function ImageContainer({setCurrentCreative, addComments, comments, addImage,images, setImages,creatives,ImageCards}) {
 
     return (
          
-        <div>  
-           <ul className="imagecards">{ImageCards}</ul>
+        <div> 
+           <ul className="imagecards">{ImageCards}</ul> 
            <UplaodImageForm addImage={addImage}/>
         </div>
        

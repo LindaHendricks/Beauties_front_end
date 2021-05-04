@@ -8,7 +8,6 @@ function UplaodImageForm({addImage}) {
     const [author, setAuthor] = useState("");
     const [picture, setPicture] = useState("");
     const [description, setDescription] = useState("");
-
   
     function handleSubmit(event) {
       event.preventDefault();
@@ -20,8 +19,7 @@ function UplaodImageForm({addImage}) {
       }
       console.log(newImage);
 
-      fetch(('http://localhost:3000/images'),{
-
+      fetch('http://localhost:3000/images',{
        method: 'POST',
        headers: {
         'Content-Type': 'application/json',

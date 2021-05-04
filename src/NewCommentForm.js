@@ -22,8 +22,6 @@ function handleSubmit (event) {
     rating: rating
   }
 
-  console.log(creativeInput)
-
 
   fetch(`http://localhost:3000/comments/`, {
     method: 'POST',

@@ -1,12 +1,12 @@
 import SavedImageCardDetails from './SavedImageCardDetails';
 
 
-function SavedImageCard() {
+function SavedImageCard({key,id, title, picture, description, addtoSavedImageList, setSavedImages}) {
     return (
          
         <div>
-           <h2>SavedImageCard</h2>
-           <SavedImageCardDetails/>
+           <h2>{title}</h2>
+           <SavedImageCardDetails key={key} id={id} title={title} picture={picture} description={description} setSavedImages={setSavedImages}/>
         </div>
        
     )

@@ -2,8 +2,8 @@ import React, {useState} from 'react';
 import SignInForm from './SignInForm';
 
 
-
-function SignIn({SetCurrentCreative}) {
+////////////SetCurrentCreative/////
+function SignIn() {
 
     const [isClicled, setSignInForm] = useState(false)
 
@@ -17,11 +17,11 @@ function handleClick () {
         <div>
 
            <button onClick={handleClick} >Sign In</button>
-           {isClicled? <SignInForm SetCurrentCreative={SetCurrentCreative} /> : null}
-
+           {isClicled? <SignInForm  /> : null}
+                      
         </div>
        
-    )
+    )///////SetCurrentCreative={SetCurrentCreative}/////////
         
 }
  

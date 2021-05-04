@@ -1,11 +1,16 @@
 import LikedImageCardDetails from './LikedImageCardDetails';
 
-function LikedImageCard() {
+function LikedImageCard({key, id, title, picture, description, addtoLikedImageList}) {
+    
+    console.log(title)
+    
     return (
          
         <div>
-           <h2>LikedImageCard</h2>
-           <LikedImageCardDetails/>
+           <p>{title}</p>
+           <img src={picture}/>
+
+           <LikedImageCardDetails key={key} id={id} title={title} description={description} addtoLikedImageList={addtoLikedImageList}/>
         </div>
        
     )

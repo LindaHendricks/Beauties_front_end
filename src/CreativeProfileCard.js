@@ -2,10 +2,23 @@ import EditCreativeProfileForm from './EditCreativeProfileForm';
 import React, {useState, useEffect} from 'react';
 
 
-function CreativeProfileCard ({deleteProfile,id,firstname, lastname, email, username, password, age, bio, avatar, portfolio, admin,location,accountType }) {
+function CreativeProfileCard ({setCreatives,creatives, deleteProfile,id,firstname, lastname, email, username, password, age, bio, avatar, portfolio, admin,location,accountType }) {
  
 
-    const [isUpdating, setUpdatedProfile] = useState("")
+    const [isUpdating, setUpdatedProfile] = useState(false)
+
+    function handleUpdateCreativeProfile(updatedProfile) {
+        const updatedProfileArray = creatives.map((profile) => {
+          if (profile.id === updatedProfile.id) {
+            return updatedProfile;
+          } else {
+            return profile;
+          }
+        });
+        setUpdatedProfile(!isUpdating);
+        console.log(updatedProfileArray)
+        setCreatives(updatedProfileArray)
+      }
 
     
 
@@ -39,7 +52,7 @@ function CreativeProfileCard ({deleteProfile,id,firstname, lastname, email, user
             <p>{accountType}</p>
             <button onClick={handleDelete}>🗑</button>
             <button onClick={handleUpdate}>update</button>
-            {isUpdating ? <EditCreativeProfileForm id={id} setUpdatedProfile={setUpdatedProfile}/> : null}
+            {isUpdating ? <EditCreativeProfileForm handleUpdateCreativeProfile={handleUpdateCreativeProfile} id={id} setUpdatedProfile={setUpdatedProfile}/> : null}
         </div>
        
     )

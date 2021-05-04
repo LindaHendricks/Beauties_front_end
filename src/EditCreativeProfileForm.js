@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
 
 
-function EditCreativeProfileForm({id,setUpdatedProfile}) {
-console.log(id)
+function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfile}) {
+
 
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -24,6 +24,7 @@ console.log(id)
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
         body: JSON.stringify({
         firstname: firstname,
@@ -39,8 +40,9 @@ console.log(id)
         accountType: accountType, 
         }),
       })
-      .then(r => r.json())
-      .then(UpdatedData => setUpdatedProfile(UpdatedData))
+      .then((r) => r.json())
+      .then((UpdatedData) => {handleUpdateCreativeProfile(UpdatedData);
+      })
 
     }
     

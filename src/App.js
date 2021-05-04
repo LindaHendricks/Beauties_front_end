@@ -1,7 +1,8 @@
-// import React, {useState, useEffect} from 'react';
-import { Switch, Route } from "react-router-dom";
+ // import React, {useState, useEffect} from 'react';
+
 import Header from './Header';
 import Search from './Search';
+import { Switch, Route } from 'react-router-dom'
 import './App.css';
 import ImageContainer from './ImageContainer';
 import ImageCard from './ImageCard';
@@ -17,13 +18,19 @@ import React, {useState, useEffect} from 'react';
 function App() {
 
   const [savedImages, setSavedImages] = useState([])
-  const [LikedImages, setLikedImages] = useState([])
+  const [likedImages, setLikedImages] = useState([])
   const [images, setImages] = useState([])
   const [creatives, setCreatives] = useState([])
   const [comments, setComments] = useState([])
-  const [currentCreative, setCurrentCreative] = useState(null)
+  const [searchTerm, setSearchTerm] = useState("");
+  const [isDarkMode, setIsDarkMode] = useState(false)
 
-  console.log(currentCreative)
+  console.log({ isDarkMode })
+  ///const [currentCreative, setCurrentCreative] = useState(null)
+
+  //console.log(currentCreative)
+
+//////////////////////////-- ADD COMMENTS -- //////////////////////////////////////
 
   function addComment(creativeInput) {
     const updatedCommentList = [creativeInput, ...comments]
@@ -36,23 +43,39 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
 .then(arrayOfComments => setComments(arrayOfComments))
 },[])
 
+//////////////////////////-- ADD SAVED IMAGE -- /////////////////////////////////////
 
-  function addSavedImage(newSavedImage){
-    const updatedSavecImagesList = [...savedImages, newSavedImage]
-    setSavedImages(updatedSavecImagesList)
+  function addtoSavedImageList (newSavedImage){
+    const updatedSavedImagesList = [...savedImages, newSavedImage]
+    setSavedImages(updatedSavedImagesList)
+  }
+
+  useEffect(() => {
+    fetch(`http://localhost:3000/saved_images`)
+    .then((response) =>response.json())
+    .then(response => setSavedImages(response))
+ },[])
+///////////////////////////////-- ADD LIKED IMAGE --/////////////////////////////////
+
+  function addtoLikedImageList (newLikedImage){
+    const updatedLikedImagesList = [...likedImages, newLikedImage]
+    setLikedImages(updatedLikedImagesList)
   }
 
  useEffect(() => {
-   fetch(`http://localhost:3000/saved_images`)
-   .then((response) =>response.json())
-   .then(response => setSavedImages(response))
-},[])
+    fetch(`http://localhost:3000/liked_images`)
+    .then((response) =>response.json())
+    .then(response => setLikedImages(response))
+ },[])
 
 
-  function addCreative(signupData) {
-    const updatedCreativesList = [...creatives, signupData]
+///////////////////////////////-- CREATE NEW CREATIVE  --/////////////////////////////////
+
+  function addCreative(signUpData) {
+    const updatedCreativesList = [signUpData,...creatives]
     setCreatives(updatedCreativesList)
   }
+
 
   useEffect(() => {  
     fetch('http://localhost:3000/creatives')
@@ -62,19 +85,42 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
      },[])
 
 
-     useEffect(() => {
-  
-      
-      fetch(`http://localhost:3000/images`)
-     .then(response => response.json())
-     .then(ArraysOfImages => setImages(ArraysOfImages))
-     },[])
+///////////////////////////////////////////// ----- Currrent Creative User ------- //////////////////////////////////
+
+    //  function putCcurrentCreative(creativeInfo) {
+    //    const updatedCreativeInfo = [creativeInfo, ...currentCreative]
+    //    setCurrentCreative(updatedCreativeInfo )
+    //  }
+
+//////////////////////////////////--- ADD NEW IMAGES IN IMAGE CONTAINER --- //////////////////////////////////////////
+
 
      function addImage(newImage) {
-      const updatedImagesList = [newImage, ...images]
+       console.log(newImage)
+      const updatedImagesList = [...images,newImage]
       console.log(updatedImagesList)
       setImages(updatedImagesList)
   }
+
+  /////////search////////////////
+  // const displayedImage = images.filter((image) => {
+  //   return image.title.toLowerCase().includes(searchTerm.toLowerCase());
+    
+  // });
+  // console.log(searchTerm)
+
+  //////////////////////////////
+
+  useEffect(() => {
+  
+      
+    fetch(`http://localhost:3000/images`)
+   .then(response => response.json())
+   .then(ArraysOfImages => setImages(ArraysOfImages))
+   },[])
+
+
+   ////////////////////// --- IMAGE CARDS --- ////////////////////////////////////////////
      
      const ImageCards = images.map((image) => (
        <ImageCard 
@@ -87,6 +133,9 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
        comments={comments}
        addImage={addImage}
        setComments={setComments}
+       addtoSavedImageList={addtoSavedImageList}
+       addtoLikedImageList={addtoLikedImageList}
+
        
  
        
@@ -97,20 +146,30 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
  
 
   return (
-    <div className="App">
-      <Header addCreative={addCreative} setCreatives={setCreatives} setCurrentCreative={setCurrentCreative}/>
-      <Search />
-       
-          <ImageContainer setComments={setComments} ImageCards={ImageCards} images={images} setImages={setImages} setComments={setComments}/>
+    
+    <main className={isDarkMode ? "dark-mode" : ""}>
+    
+
+    <Header addCreative={addCreative} setCreatives={setCreatives} isDarkMode={isDarkMode} onToggleDarkMode={setIsDarkMode}/>
+     {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} displayedImage={displayedImage}/> */}
+      <Switch>
+        <Route exact path="/home">
+         <ImageContainer addtoLikedImageList={addtoLikedImageList} addtoSavedImageList={addtoSavedImageList} setComments={setComments} ImageCards={ImageCards} images={images} setImages={setImages} setComments={setComments} addImage={addImage} />
+        </Route>
          
-          <CreativeProfile />
-        
-          <SavedImageContainer creatives={creatives} addSavedImage={addSavedImage} savedImages={addSavedImage}/>
+        <Route exact path="/profile">
+          <CreativeProfile creatives={creatives} setCreatives={setCreatives}/>
+        </Route>
           
-          <LikedImageContainer/>
-        
-   
-    </div>
+        <Route exact path="/saved_images"> 
+         <SavedImageContainer addtoSavedImageList={addtoSavedImageList} creatives={creatives} savedImages={savedImages} setSavedImages={setSavedImages}/>
+        </Route>
+         
+        <Route exact path="/liked_images"> 
+          <LikedImageContainer addtoLikedImageList={addtoLikedImageList} likedImages={likedImages} setLikedImages={setLikedImages}/>
+        </Route>
+        </Switch>
+    </main>
   );
 }
 

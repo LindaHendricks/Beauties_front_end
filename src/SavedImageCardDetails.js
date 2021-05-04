@@ -1,8 +1,9 @@
-function SavedImageCardDetails() {
+function SavedImageCardDetails({key, id, title, picture, description, setSavedImages}) {
     return (
          
         <div>
-           <h2>SavedImageCardDetails</h2>
+             <img src={picture}/>
+             <p>{description}</p>
         </div>
        
     )

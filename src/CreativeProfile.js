@@ -4,22 +4,14 @@ import CreativeProfileCard from './CreativeProfileCard';
 
 
 
-function CreativeProfile() {
+function CreativeProfile({creatives, setCreatives}) {
 
-    const [creatives, setCreatives] = useState([])
+   
 
     function deleteProfile(id) {
         const updatedCreativesArray = creatives.filter((creative) => creative.id !== id);
         setCreatives(updatedCreativesArray);
       }
-
-
-    useEffect(() => {  
-        fetch('http://localhost:3000/creatives')
-        .then((r) =>r.json())
-        .then(r => setCreatives(r)) 
-
-    },[])
  
     const creativesList = creatives.map((creative) => {
         return <CreativeProfileCard 
@@ -36,12 +28,15 @@ function CreativeProfile() {
         portfolio={creative.portfolio} 
         admin={creative.admin}
         deleteProfile={deleteProfile} 
+        creatives={creatives}
+        setCreatives={setCreatives}
         />
     })
 
     return (
          
         <div>
+            <h1>My Profile</h1>
             <ul>{creativesList}</ul>
         </div>
        

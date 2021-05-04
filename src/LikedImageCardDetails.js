@@ -1,10 +1,14 @@
 
 
-function LikedImageCardDetails() {
+function LikedImageCardDetails({key, id, title, picture, description, addtoLikedImageList}) {
+    console.log(picture)
+    console.log(description)
+    
     return (
          
         <div>
-           <h2>LikedImageCardDetails</h2>
+           
+            <p>{description}</p>
         </div>
        
     )

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 
 
-function SignupForm ({addCreative, setCreatives}) {
+function SignupForm ({currentCreative, addCreative, setCreatives}) {
 
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -18,28 +18,32 @@ function SignupForm ({addCreative, setCreatives}) {
   
     function handleSubmit(event) {
       event.preventDefault();
+
+      const signUpData = { 
+        firstname,
+        lastname,
+        email,
+        age,
+        username,
+        password,
+        avatar,
+        location, 
+        bio,
+        portfolio, 
+        accountType }
        
       fetch(`http://localhost:3000/creatives`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          
         },
-        body: JSON.stringify({
-        firstname: firstname,
-        lastname: lastname,
-        email: email,
-        age: age,
-        username: username,
-        password: password,
-        avatar: avatar,
-        location: location, 
-        bio: bio,
-        portfolio: portfolio, 
-        accountType: accountType,
-        }),
+        body: JSON.stringify(signUpData),
+        
       })
-      .then(r => r.json())
-      .then(signupData => setCreatives(signupData))
+      .then((r) => r.json())
+      .then((signUpData) => {addCreative(signUpData);
+      });
 
     }
     

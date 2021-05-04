@@ -2,7 +2,7 @@ import ImageCardDetails from './ImageCardDetails';
 import React, {useState} from 'react';
 
 
-function ImageCard({setComments, creativeId, image_id, title, description, picture,addComment,comments}) {
+function ImageCard({setCurrentCreative, setComments, creativeId, image_id, title, description, picture,addComment,comments}) {
 
 
     const [isShown, setShown] = useState(false)
@@ -14,13 +14,13 @@ function ImageCard({setComments, creativeId, image_id, title, description, pictu
 
     return (
          
-        <main>
-         <div >
+        
+         <div className="card">
             <h3>{title}</h3>
             <img onClick={handleClick}src={picture} alt={title}  image_id={ image_id}/>
-            {isShown ? <ImageCardDetails creativeId={creativeId} addComment={addComment} description={description}  image_id={ image_id} comments={comments}/>  : null}
-            </div>
-        </main>
+            {isShown ? <ImageCardDetails  picture={picture} title={title} setCurrentCreative={setCurrentCreative} creativeId={creativeId} addComment={addComment} description={description}  image_id={ image_id} comments={comments}/>  : null}
+        </div>
+        
        
     )
         
