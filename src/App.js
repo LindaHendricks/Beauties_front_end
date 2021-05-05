@@ -1,6 +1,5 @@
- // import React, {useState, useEffect} from 'react';
 
-import Header from './Header';
+ import Header from './Header';
 import Search from './Search';
 import { Switch, Route } from 'react-router-dom'
 import './App.css';
@@ -10,6 +9,8 @@ import CreativeProfile from './CreativeProfile';
 import SavedImageContainer from './SavedImageContainer';
 import LikedImageContainer from './LikedImageContainer';
 import React, {useState, useEffect} from 'react';
+import Signup from './Signup';
+import UplaodImageForm from './UplaodImageForm';
 // import ImageCard from './ImageCard';
 // import NewCommentForm from './NewCommentForm';
 
@@ -24,11 +25,14 @@ function App() {
   const [comments, setComments] = useState([])
   const [searchTerm, setSearchTerm] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false)
+  console.log(searchTerm)
 
   console.log({ isDarkMode })
   ///const [currentCreative, setCurrentCreative] = useState(null)
 
   //console.log(currentCreative)
+
+
 
 //////////////////////////-- ADD COMMENTS -- //////////////////////////////////////
 
@@ -102,12 +106,13 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
       setImages(updatedImagesList)
   }
 
-  /////////search////////////////
-  // const displayedImage = images.filter((image) => {
-  //   return image.title.toLowerCase().includes(searchTerm.toLowerCase());
-    
-  // });
-  // console.log(searchTerm)
+  /////////------SEARCH------------////////////////
+
+  function filterImagebySearch () {
+    return ImageCards.filter((ImageCard) => {
+      return ImageCard.props.title.toLowerCase().includes(searchTerm)
+  })
+  }
 
   //////////////////////////////
 
@@ -149,12 +154,12 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
     
     <main className={isDarkMode ? "dark-mode" : ""}>
     
-
-    <Header addCreative={addCreative} setCreatives={setCreatives} isDarkMode={isDarkMode} onToggleDarkMode={setIsDarkMode}/>
+    <Header addCreative={addCreative} setCreatives={setCreatives} isDarkMode={isDarkMode} onToggleDarkMode={setIsDarkMode} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
      {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} displayedImage={displayedImage}/> */}
+     <Signup  addCreative={addCreative} setCreatives={setCreatives}/>
       <Switch>
         <Route exact path="/home">
-         <ImageContainer addtoLikedImageList={addtoLikedImageList} addtoSavedImageList={addtoSavedImageList} setComments={setComments} ImageCards={ImageCards} images={images} setImages={setImages} setComments={setComments} addImage={addImage} />
+         <ImageContainer setSearchTerm={setSearchTerm}  addtoLikedImageList={addtoLikedImageList} addtoSavedImageList={addtoSavedImageList} setComments={setComments} ImageCards={filterImagebySearch ()} images={images} setImages={setImages} setComments={setComments} addImage={addImage} />
         </Route>
          
         <Route exact path="/profile">
@@ -168,6 +173,7 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
         <Route exact path="/liked_images"> 
           <LikedImageContainer addtoLikedImageList={addtoLikedImageList} likedImages={likedImages} setLikedImages={setLikedImages}/>
         </Route>
+        <Route exact path="/UploadImages"></Route>
         </Switch>
     </main>
   );

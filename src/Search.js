@@ -1,6 +1,27 @@
 
 
-// function Search({searchTerm, setSearchTerm}) {
+function Search({searchTerm, setSearchTerm}) {
+
+return (
+
+<div className="searchBar">
+ <label htmlfor="search">Search Image:</label>
+ <input
+ type="text"
+ id="search"
+ placeholder="Type a keyword..."
+ value={searchTerm}
+ onChange={(e) => setSearchTerm(e.target.value)}
+ />
+</div>
+
+)
+
+
+}
+
+
+
 
 //     function handleSearch (event) {
 //         event.preventDefault()
@@ -23,4 +44,4 @@
         
 // }
  
-// export default Search;
+export default Search;
