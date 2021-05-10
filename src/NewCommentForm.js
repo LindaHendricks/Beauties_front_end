@@ -3,20 +3,23 @@ import React, { useState } from "react";
 import NewCommentsDetailsForm from "./NewCommentsDetailsForm";
 
 
-function NewCommentForm({setComments,addComment, image_id, comments}) {
+function NewCommentForm({setComments,addComment, image_id, comments, new_image_id}) {
 
+console.log(new_image_id)
 
-const formId =  image_id
+const formId =  new_image_id
 
-const [note, setNote] = useState('')
+const [note, setNote] = useState("")
 const [rating, setRating] = useState (0)
 
+console.log(note)
+console.log(rating)
 
 function handleSubmit (event) {
   event.preventDefault()
 
   const creativeInput = {
-    creative_id: 2,
+    creative_id: 1,
     image_id: formId,
     note: note,
     rating: rating
@@ -34,16 +37,17 @@ function handleSubmit (event) {
   .then(r => r.json())
   .then(creativeInput => addComment(creativeInput))
   
+  //addComment
 }
 
   return (
     <>
-    <form  image_id={image_id} onSubmit={handleSubmit} className="newcomment">
-      <input value={note} onChange={e => setNote(e.target.value)} placeholder="Note" />
-      <input value={rating} onChange={e => setRating(e.target.value)} placeholder="Rating" />
-      <input type="submit" value="Share your findings" />
+    <form className="comment" new_image_id={new_image_id} onSubmit={handleSubmit} className="newcomment">
+      <input className="comment" value={note} onChange={e => setNote(e.target.value)} placeholder="Note" />
+      <input className="comment" value={rating} onChange={e => setRating(e.target.value)} placeholder="Rating" />
+      <input type="submit" value="add" />
     </form>
-    <NewCommentsDetailsForm note={note} rating={rating} comments={comments}  image_id={ image_id}/>
+    <NewCommentsDetailsForm note={note} rating={rating} comments={comments}  image_id={ image_id} new_image_id={new_image_id}/>
     </>
   );
 }

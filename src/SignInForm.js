@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-function SignInForm({setCurrentCreative}) {
+function SignInForm({isClicked, setSignInForm, setCurrentCreative}) {
   const [formData, setFormData] = useState({
     username: "",
-    password: "",
+    password: ""
   });
   const [errors, setErrors] = useState([]);
   const history = useHistory();
@@ -27,7 +27,9 @@ function SignInForm({setCurrentCreative}) {
       
     }) 
       .then((response) => response.json())
-      .then((user) => console.log(user))
+      .then((user) => setCurrentCreative(user))
+
+      setSignInForm(!isClicked)
   }
 
   return (
@@ -53,7 +55,7 @@ function SignInForm({setCurrentCreative}) {
             {error}
           </p>
         ))}
-        <input type="submit" value="Login" />
+        <input type="submit" value="singin" />
       </form>
     </div>
   );

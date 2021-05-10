@@ -2,7 +2,7 @@ import EditCreativeProfileForm from './EditCreativeProfileForm';
 import React, {useState, useEffect} from 'react';
 
 
-function CreativeProfileCard ({setCreatives,creatives, deleteProfile,id,firstname, lastname, email, username, password, age, bio, avatar, portfolio, admin,location,accountType }) {
+function CreativeProfileCard ({setCreatives, creatives, deleteProfile, id, firstname, lastname, email, username, password, age, bio, avatar, portfolio, admin,location,accountType }) {
  
 
     const [isUpdating, setUpdatedProfile] = useState(false)

@@ -1,28 +1,28 @@
-// import React, {useState} from 'react';
-// import SignInForm from './SignInForm';
+import React, {useState} from 'react';
+import SignInForm from './SignInForm';
 
 
-// ////////////SetCurrentCreative/////
-// function SignIn() {
+////////////SetCurrentCreative/////
+function SignIn() {
 
-//     const [isClicled, setSignInForm] = useState(false)
+    const [isClicked, setSignInForm] = useState(false)
 
-// function handleClick () {
-//     setSignInForm(!isClicled)
-// }
+function handleClick () {
+    setSignInForm(!isClicked)
+}
 
 
-//     return (
+    return (
          
-//         <div>
+        <div>
 
-//            <button onClick={handleClick} >Sign In</button>
-//            {isClicled? <SignInForm  /> : null}
+           <button onClick={handleClick} >Sign In</button>
+           {isClicked? <SignInForm isClicked={isClicked} setSignInForm={setSignInForm}  /> : null}
                       
-//         </div>
+        </div>
        
-//     )///////SetCurrentCreative={SetCurrentCreative}/////////
+    )///////SetCurrentCreative={SetCurrentCreative}/////////
         
-// }
+}
  
-// export default SignIn;
+export default SignIn;

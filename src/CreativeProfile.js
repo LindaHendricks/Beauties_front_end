@@ -17,8 +17,8 @@ function CreativeProfile({creatives, setCreatives}) {
         return <CreativeProfileCard 
         key={creative.id}
         id={creative.id} 
-        firstName={creative.firstName} 
-        lastName={creative.lastName} 
+        firstname={creative.firstname} 
+        lastname={creative.lastname} 
         email={creative.email} 
         username={creative.username} 
         password={creative.password} 

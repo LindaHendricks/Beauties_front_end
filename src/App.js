@@ -1,5 +1,6 @@
 
- import Header from './Header';
+import ImagePage from './ImagePage';
+import Header from './Header';
 import Search from './Search';
 import { Switch, Route } from 'react-router-dom'
 import './App.css';
@@ -11,7 +12,9 @@ import LikedImageContainer from './LikedImageContainer';
 import React, {useState, useEffect} from 'react';
 import Signup from './Signup';
 import UplaodImageForm from './UplaodImageForm';
-// import ImageCard from './ImageCard';
+import LandingPage from './LandingPage';
+import SignIn from './SignIn';
+import ImageCardDetails from './ImageCardDetails';
 // import NewCommentForm from './NewCommentForm';
 
 
@@ -25,6 +28,7 @@ function App() {
   const [comments, setComments] = useState([])
   const [searchTerm, setSearchTerm] = useState("");
   const [isDarkMode, setIsDarkMode] = useState(false)
+  const [currentCreative, setCurrentCreative] = useState (null)
   console.log(searchTerm)
 
   console.log({ isDarkMode })
@@ -38,8 +42,8 @@ function App() {
 
   function addComment(creativeInput) {
     const updatedCommentList = [creativeInput, ...comments]
-    console.log(updatedCommentList)
     setComments(updatedCommentList)
+    console.log(updatedCommentList)
 }
 
 useEffect(() => { fetch(`http://localhost:3000/comments`)
@@ -77,16 +81,17 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
 
   function addCreative(signUpData) {
     const updatedCreativesList = [signUpData,...creatives]
+    console.log(updatedCreativesList)
     setCreatives(updatedCreativesList)
   }
 
 
-  useEffect(() => {  
-    fetch('http://localhost:3000/creatives')
-    .then((r) =>r.json())
-    .then(r => setCreatives(r)) 
+  // useEffect(() => {  
+  //   fetch('http://localhost:3000/creatives')
+  //   .then((r) =>r.json())
+  //   .then(r => setCreatives(r)) 
 
-     },[])
+  //    },[])
 
 
 ///////////////////////////////////////////// ----- Currrent Creative User ------- //////////////////////////////////
@@ -140,10 +145,6 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
        setComments={setComments}
        addtoSavedImageList={addtoSavedImageList}
        addtoLikedImageList={addtoLikedImageList}
-
-       
- 
-       
        />
        ));
  
@@ -152,30 +153,51 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
 
   return (
     
-    <main className={isDarkMode ? "dark-mode" : ""}>
-    
-    <Header addCreative={addCreative} setCreatives={setCreatives} isDarkMode={isDarkMode} onToggleDarkMode={setIsDarkMode} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+    <div className="app">
+      <div className="headerdesign">
      {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} displayedImage={displayedImage}/> */}
-     <Signup  addCreative={addCreative} setCreatives={setCreatives}/>
+     </div>
       <Switch>
-        <Route exact path="/home">
+      <Route exact path="/">
+      <LandingPage addCreative={addCreative} setCreatives={setCreatives} />
+      <Signup  addCreative={addCreative} setCreatives={setCreatives}/>
+      {/* <SignIn/> */}
+      </Route>
+
+         <Route exact path="/home">
+         <Header addCreative={addCreative} setCreatives={setCreatives} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
          <ImageContainer setSearchTerm={setSearchTerm}  addtoLikedImageList={addtoLikedImageList} addtoSavedImageList={addtoSavedImageList} setComments={setComments} ImageCards={filterImagebySearch ()} images={images} setImages={setImages} setComments={setComments} addImage={addImage} />
-        </Route>
+         </Route>
          
         <Route exact path="/profile">
-          <CreativeProfile creatives={creatives} setCreatives={setCreatives}/>
-        </Route>
+        <Header addCreative={addCreative} setCreatives={setCreatives} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+        <CreativeProfile creatives={creatives} setCreatives={setCreatives}/>
+         </Route>
           
         <Route exact path="/saved_images"> 
+        <Header addCreative={addCreative} setCreatives={setCreatives} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+
          <SavedImageContainer addtoSavedImageList={addtoSavedImageList} creatives={creatives} savedImages={savedImages} setSavedImages={setSavedImages}/>
-        </Route>
+         </Route>
          
         <Route exact path="/liked_images"> 
-          <LikedImageContainer addtoLikedImageList={addtoLikedImageList} likedImages={likedImages} setLikedImages={setLikedImages}/>
+        <Header addCreative={addCreative} setCreatives={setCreatives} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+
+        <LikedImageContainer addtoLikedImageList={addtoLikedImageList} likedImages={likedImages} setLikedImages={setLikedImages}/>
         </Route>
-        <Route exact path="/UploadImages"></Route>
+        <Route exact path="/UploadImages">
+        <Header addCreative={addCreative} setCreatives={setCreatives} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+
+        <UplaodImageForm addImage={addImage}/>
+        </Route>
+        <Route exact path= "/images/:id">
+        <Header addCreative={addCreative} setCreatives={setCreatives} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+        <ImagePage images={images} setImages={setImages} addtoLikedImageList={addtoLikedImageList} addComment={addComment} comments={comments}/>
+        </Route>
+
         </Switch>
-    </main>
+        
+    </div>
   );
 }
 

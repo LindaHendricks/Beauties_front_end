@@ -1,8 +1,10 @@
 import NewCommentForm from './NewCommentForm';
 import React, {useState} from 'react';
 import Comments from './Comments';
+import ImagePage from './ImagePage';
+import { NavLink } from 'react-router-dom'
 
-function ImageCardDetails({title, picture, creativeId, image_id, description, addComment, comments}) {
+function ImageCardDetails({addtoLikedImageList, title, picture, creativeId, image_id, description, addComment, comments}) {
 
 
 
@@ -69,17 +71,20 @@ console.log(image_id)
 
 
     return (
-         
-        <>  <h4>Description</h4>
+        <div className="imgdetails">
+         <span className="imgdetails">  
+           <h4>{title}</h4>
             <p>{description}</p>
-           <div className="button">
-            <button onClick={handlHeartClick}>{isFav ? "★" : "☆" }</button>
-            <button onClick={handleClickSaved }>{isSaved ? "saved" : "save" }</button>
+            <button  className="imgdetails" onClick={handlHeartClick}>{isFav ? "★" : "☆" }</button>
+            <button className="imgdetails" onClick={handleClickSaved }>{isSaved ? "saved" : "save" }</button>
             <Comments />
             <NewCommentForm addComment={addComment}  image_id={ image_id} comments={comments}/>
-          </div>
-          
-       </>
+            <Comments/>   
+            <ImagePage image_id={ image_id} /> 
+               
+        </span>
+        </div> 
+        
     )
         
 }

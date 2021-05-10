@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 
 
@@ -8,6 +9,7 @@ function UplaodImageForm({addImage}) {
     const [author, setAuthor] = useState("");
     const [picture, setPicture] = useState("");
     const [description, setDescription] = useState("");
+    const history = useHistory();
   
     function handleSubmit(event) {
       event.preventDefault();
@@ -29,11 +31,13 @@ function UplaodImageForm({addImage}) {
       })
       .then(response => response.json())
       .then(response => addImage(response))
+      history.push(`/home`)
+
     }
     
   
     return (
-      <form onSubmit={handleSubmit}>
+      <form className="new-img-form" onSubmit={handleSubmit}>
         <h1>Upload an Image</h1>
         <label htmlFor="Title">Title</label>
         <input

@@ -1,19 +1,23 @@
+import styled from "styled-components"
+
+const SearchStyle = styled.label`
+position: relative;
+text-align: center;
+border-radius: 50px;
+`
+
+
 
 
 function Search({searchTerm, setSearchTerm}) {
 
 return (
 
-<div className="searchBar">
- <label htmlfor="search">Search Image:</label>
- <input
- type="text"
- id="search"
- placeholder="Type a keyword..."
- value={searchTerm}
- onChange={(e) => setSearchTerm(e.target.value)}
- />
+<div className="searchbar">
+ <label >Search Image:</label>
+ <input type="text" id="search" placeholder="Type a keyword..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
 </div>
+
 
 )
 

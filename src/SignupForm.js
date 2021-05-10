@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
+import {useHistory} from 'react-router-dom';
 
 
-function SignupForm ({currentCreative, addCreative, setCreatives}) {
+
+function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, setCreatives}) {
 
     const [firstname, setFirstname] = useState("");
     const [lastname, setLastname] = useState("");
@@ -14,7 +16,8 @@ function SignupForm ({currentCreative, addCreative, setCreatives}) {
     const [bio, setBio] = useState("");
     const [portfolio, setPortfolio] = useState("");
     const [accountType, setAccountType] = useState(false);
-
+    const history = useHistory()
+    
   
     function handleSubmit(event) {
       event.preventDefault();
@@ -44,6 +47,8 @@ function SignupForm ({currentCreative, addCreative, setCreatives}) {
       .then((r) => r.json())
       .then((signUpData) => {addCreative(signUpData);
       });
+      history.push(`/home`)
+       setSignupForm(!isClicked)
 
     }
     

@@ -5,15 +5,18 @@ import UplaodImageForm from './UplaodImageForm';
 import Comments from './Comments';
 import Search from './Search';
 
-function ImageContainer({searchTerm, setSearchTerm, setCurrentCreative, addComments, comments, addImage,images, setImages,creatives,ImageCards}) {
+function ImageContainer({addtoLikedImageList, searchTerm, setSearchTerm, setCurrentCreative, addComments, comments, addImage,images, setImages,creatives,ImageCards}) {
 console.log(ImageCards)
     return (
-         
-        <div> 
-         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
-           <ul className="imagecards">{ImageCards}</ul> 
-           {/* <UplaodImageForm addImage={addImage}/> */}
+       
+        <main>
+        <div className="imagescontainer"> 
+           {ImageCards}
         </div>
+        </main>
+        
+       
+        
        
     )
         

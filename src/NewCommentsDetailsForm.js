@@ -1,13 +1,12 @@
 import Comments from './Comments';
 
 
-function NewCommentsDetailsForm({comments,note,rating,image_id}) {
-
+function NewCommentsDetailsForm({comments,note,rating,image_id, new_image_id}) {
 
 
   const commentsList = comments.map(comment => {
    
-      if ( image_id && comment.image.id ===  image_id ){
+      if ( new_image_id && comment.image.id ==  new_image_id ){
 
         return <Comments 
         key={comment.note} 

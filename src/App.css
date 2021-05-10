@@ -1,21 +1,229 @@
-header a.active {
-    color: rgb(220, 119, 136);
-  }
+/* 
+.imageitem {
+    
+    display: flexbox;
+    margin: 1em 1em 1em 2em;
+    width: 100%
+}
 
-  .card {
+img {
+    cursor: pointer;
+    width: 10%;
+    border-radius: 15px;
+    height:auto
+}
+
+
+  .imgitem {
       width: 20%;
       float: right; 
       margin: 0px 0px 15px 15px
   }
+
+.imgdetails {
+      border : 1px solid;
+      border-color: rgb(235, 181, 181);
+      border-radius: 15px;
+      padding: 15px 15px 15px 15px;
+      margin: ablsolute;
+      width: 19%
+  }
+
+  .imgdetails h4 {
+    text-align: center;
+    color: rgb(235, 181, 181);
+    padding: 0;
+    font-size: 13 px
+}
+
+
+
+
+.imgdetails button {
+    position: center;
+    margin: auto;
+    display: grid;
+    background-color: white;
+    font-size: 11px
+}
+
+
   img {
-      width: 100%;
-      border-radius: 8px;
-      height:auto
+      width: 23%;
+      border-radius: 25px;
+      height:auto;
+      padding: 15px 15px 15px 15px
+  } 
+
+  input {
+    position: relative;
+    text-align: center;
+    border-radius: 50px;
+    border-color: white
+  }
+
+  .searchbar {
+      text-align: center;
+      padding: 50px;
   }
 
 
+
+.inner_header{
+    width: 1000px;
+    height: 100%;
+    display: block;
+    margin: 0 auto;
+}
+  */
+
+
+  .imagescontainer {
+   align-items: stretch;
+   justify-content: space-around;
+   /* flex-direction: column; */
+   /* margin: 50px 50px */
+  }
+
+  .new-img-form {
+    padding: 2rem 1rem;
+    margin: 2rem 0;
+    background-color: rgba(245, 204, 204);
+  }
+
+  /* .imgitem {
+  display: inline;
+  background-repeat: no-repeat;
+  background-position: center 90%;
+  float: left;
+  margin: 2%;
+  padding: 1%;
+  outline: #3B0B0B dotted thick;
+  transition: 0.75s;
+  opacity: 1;
+    
+  }
+
+  img {
+    display: flex;
+    flex-basis: 20%;
+    border-radius: 3px;
+    padding: 30px  30px  30px  30px ;
+    height: 20%; */
+    
+    /* margin: 50px 50px */
+
+    /* padding: 15px 15px 15px 15px */
+  /* }
+
+  .header {
+    display: flex;
+    flex-basis:  100%;
+    /* height: 100%; */
+    /* display: block; */
+    /* background-color:rgb(235, 181, 181);
+}  */
+
+ .imgitem {
+    list-style: none;
+    display: flexbox;
+    margin: 1em 1em 1em 2em;
+    width: 100%
+  }
   
-  header {
-      background-color: rgb(247, 225, 229);
-      position: relative;
+  .card {
+    margin: 1rem;
+    display: flexbox;
+    margin: 1em 1em 1em 2em;
+    width: 100%
   }
+  
+  img {
+    flex: 1;
+    width: 25%;
+    border-radius: 10%;
+    margin: 0px 0px 0px 0px;
+    padding: 20px
+  }
+  
+  button {
+    margin-top: 0.5rem;
+  }
+
+  * {
+    margin: auto;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  button {
+    padding: 0.25rem 1rem;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+  }
+
+  .comment input {
+    padding: 0.25rem 1rem;
+    font-family: inherit;
+    border: none;
+    cursor: pointer;
+
+  }
+
+  .app {
+    margin: 0 auto;
+    max-width: 1200px;
+  }
+
+  .searchbar {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  input {
+    padding: 0.25rem;
+    border: none;
+    font-family: inherit;
+    font-size: 8px;
+    border-bottom: 1px solid rgb(159, 147, 147);
+    transition: all 0.2s;
+    width: 5%;
+  }
+
+  main {
+    /* padding: 0 1rem; */
+    margin: 0;
+    border-radius: 15px;
+    padding: 5px;
+    background-color: rgba(235, 181, 181, 0.242);
+    display: flex;
+    margin: 40px 40px 40px 40px;
+  }
+
+  .imgdetails {
+    flex: 1;
+    border : 1px solid;
+    border-color: rgba(235, 181, 181, 0.242);
+    border-radius: 15px;
+    padding: 15px 15px 15px 15px;
+    margin: ablsolute;
+    width: 19%
+}
+
+.imgdetails p {
+    text-align: center;
+    font-size: 11px
+}
+
+
+.header {
+  text-align: center;
+  width: 100%;
+  height: 220px;
+  display: block;
+  background-color:url();
+  border-radius: 15px;
+  margin-top: 40px;
+}
