@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
 
-function SignInForm({isClicked, setSignInForm, setCurrentCreative}) {
+function SignInForm({isClicked2, setSignInForm, setCurrentCreative}) {
   const [formData, setFormData] = useState({
     username: "",
     password: ""
@@ -29,12 +29,13 @@ function SignInForm({isClicked, setSignInForm, setCurrentCreative}) {
       .then((response) => response.json())
       .then((user) => setCurrentCreative(user))
 
-      setSignInForm(!isClicked)
+      setSignInForm(!isClicked2)
+      history.push(`/home`)
   }
 
   return (
     <div>
-      <form onSubmit={handleSubmit} autoComplete="off">
+      <form className="signinform" onSubmit={handleSubmit} autoComplete="off">
         <label>Username</label>
         <input
           type="text"
@@ -42,8 +43,9 @@ function SignInForm({isClicked, setSignInForm, setCurrentCreative}) {
           value={formData.username}
           onChange={handleChange}
         />
-        <label>Password</label>
+        <label className="signinform" >Password</label>
         <input
+          className="signinform"
           type="password"
           name="password"
           value={formData.password}
@@ -55,7 +57,7 @@ function SignInForm({isClicked, setSignInForm, setCurrentCreative}) {
             {error}
           </p>
         ))}
-        <input type="submit" value="singin" />
+        <input className="signinform" type="submit" value="singin" />
       </form>
     </div>
   );

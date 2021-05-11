@@ -14,15 +14,18 @@ function Header({addCreative, setCreatives,isDarkMode, onToggleDarkMode,searchTe
     return (
         <header className="header">
             <div className="inner_header">
-         <h1>Inspired</h1>
-         <h3>Everyday, browse, like and save your next inspiration</h3>
-          <div className="toggle-switch">
-           <NavLink exact to="/home">Home</NavLink>
-           <NavLink exact to="/profile">My profile</NavLink>
-           <NavLink exact to="/liked_images">Favorites</NavLink>
-           <NavLink exact to="/saved_images">Saved Image</NavLink>
-           <NavLink exact to="/UploadImages">UplaodImageForm</NavLink>
-           <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+           <NavLink exact to="/home"><h1>Beauties</h1></NavLink>
+           <h3>Everyday, browse, like and save your next beauty inspiration</h3>
+           <div className="toggle-switch">
+               <ul className="navigation">
+               <NavLink exact to="/UploadImages"><li>UplaodImageForm</li></NavLink>
+               <NavLink exact to="/saved_images"><li>Saved Imaged</li></NavLink>
+               <NavLink exact to="/liked_images"><li>Favorites</li></NavLink>
+               <NavLink exact to="/profile"><li>My profile</li></NavLink>
+               <li>About</li>
+               </ul>
+           
+           {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
            </div>  
           </div>
         </header>

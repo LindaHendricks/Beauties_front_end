@@ -96,10 +96,10 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
 
 ///////////////////////////////////////////// ----- Currrent Creative User ------- //////////////////////////////////
 
-    //  function putCcurrentCreative(creativeInfo) {
-    //    const updatedCreativeInfo = [creativeInfo, ...currentCreative]
-    //    setCurrentCreative(updatedCreativeInfo )
-    //  }
+     function putCcurrentCreative(creativeInfo) {
+       const updatedCreativeInfo = [creativeInfo, ...currentCreative]
+       setCurrentCreative(updatedCreativeInfo )
+     }
 
 //////////////////////////////////--- ADD NEW IMAGES IN IMAGE CONTAINER --- //////////////////////////////////////////
 
@@ -152,20 +152,18 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
  
 
   return (
-    
+    <div className="intro"> 
     <div className="app">
-      <div className="headerdesign">
-     {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} displayedImage={displayedImage}/> */}
-     </div>
       <Switch>
       <Route exact path="/">
       <LandingPage addCreative={addCreative} setCreatives={setCreatives} />
-      <Signup  addCreative={addCreative} setCreatives={setCreatives}/>
-      {/* <SignIn/> */}
+      <Signup  addCreative={addCreative} setCreatives={setCreatives} setCurrentCreative={setCurrentCreative}/>
+      <SignIn setCurrentCreative={setCurrentCreative}/>
       </Route>
 
          <Route exact path="/home">
          <Header addCreative={addCreative} setCreatives={setCreatives} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
+         <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
          <ImageContainer setSearchTerm={setSearchTerm}  addtoLikedImageList={addtoLikedImageList} addtoSavedImageList={addtoSavedImageList} setComments={setComments} ImageCards={filterImagebySearch ()} images={images} setImages={setImages} setComments={setComments} addImage={addImage} />
          </Route>
          
@@ -197,6 +195,7 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
 
         </Switch>
         
+    </div>
     </div>
   );
 }

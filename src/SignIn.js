@@ -3,7 +3,7 @@ import SignInForm from './SignInForm';
 
 
 ////////////SetCurrentCreative/////
-function SignIn() {
+function SignIn({setCurrentCreative}) {
 
     const [isClicked, setSignInForm] = useState(false)
 
@@ -16,9 +16,9 @@ function handleClick () {
          
         <div>
 
-           <button onClick={handleClick} >Sign In</button>
-           {isClicked? <SignInForm isClicked={isClicked} setSignInForm={setSignInForm}  /> : null}
-                      
+           {/* <span><button id="homepage" onClick={handleClick} >Sign In</button></span>
+           {isClicked? <SignInForm setCurrentCreative={setCurrentCreative} isClicked={isClicked} setSignInForm={setSignInForm}  /> : null}
+                       */}
         </div>
        
     )///////SetCurrentCreative={SetCurrentCreative}/////////

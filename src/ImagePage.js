@@ -3,6 +3,55 @@ import { useEffect, useState } from 'react';
 import NewCommentForm from './NewCommentForm';
 import NewCommentsDetailsForm from './NewCommentsDetailsForm';
 import Comments from './Comments';
+import styled from "styled-components";
+
+const Button = styled.button`
+background-color: white;
+font-family: Times New Roman;
+margin-top: 10px;
+margin-left: 330px;
+transition-duration: 0.4s;
+padding: 0.25rem 1rem;
+font-family: inherit;
+border: 1px solid rgb(230, 184, 184);
+cursor: pointer;
+border-radius: 8px; 
+
+  &:hover {
+    background: rgb(216, 168, 168);
+    color: white;
+    border: none;
+  }
+  &:focus {
+    background: #FFB6C1;
+    color: white;
+    border: none;
+  }
+`;
+
+const Button2 = styled.button`
+background-color: white;
+font-family: Times New Roman;
+margin-top: 10px;
+margin-left: 85px;
+transition-duration: 0.4s;
+padding: 0.25rem 1rem;
+font-family: inherit;
+border: 1px solid rgb(230, 184, 184);
+cursor: pointer;
+border-radius: 8px; 
+
+  &:hover {
+    background: rgb(216, 168, 168);
+    color: white;
+    border: none;
+  }
+  &:focus {
+    background: #FFB6C1;
+    color: white;
+    border: none;
+  }
+`;
 
 function ImagePage({ images, setImages, addtoLikedImageList, creativeId, image_id, addComment, comments}){
    
@@ -84,15 +133,14 @@ function ImagePage({ images, setImages, addtoLikedImageList, creativeId, image_i
        
        
        <div className="imagepage">
-            <p>I AM REDERING SOMETHING LINDA</p>
             {imagePage? <> <h1>{imagePage.title}</h1>
-        <img src={imagePage.picture} alt={imagePage.title}/>
+        <img className="imagepage" src={imagePage.picture} alt={imagePage.title}/>
         <p>{imagePage.description}</p> </> : "hi"}
 
-        <button  className="imgdetails" onClick={handlHeartClick}>{isFav ? "★" : "☆" }</button>
-        <button className="imgdetails" onClick={handleClickSaved }>{isSaved ? "saved" : "save" }</button>
-        <NewCommentForm addComment={addComment}  image_id={image_id} new_image_id={id} comments={comments}/>
+        <Button className="imgdetails" onClick={handlHeartClick}>{isFav ? "♥" : "♡" }</Button>
+        <Button2 className="imgdetails" onClick={handleClickSaved }>{isSaved ? "saved" : "save" }</Button2>
         <Comments/> 
+        <NewCommentForm addComment={addComment}  image_id={image_id} new_image_id={id} comments={comments}/>
         </div>
        
     )

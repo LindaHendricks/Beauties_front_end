@@ -42,12 +42,13 @@ function handleSubmit (event) {
 
   return (
     <>
-    <form className="comment" new_image_id={new_image_id} onSubmit={handleSubmit} className="newcomment">
-      <input className="comment" value={note} onChange={e => setNote(e.target.value)} placeholder="Note" />
-      <input className="comment" value={rating} onChange={e => setRating(e.target.value)} placeholder="Rating" />
+       <form className="comment" new_image_id={new_image_id} onSubmit={handleSubmit} className="newcomment">
+      <input className="comment" value={note} onChange={e => setNote(e.target.value)} placeholder="Your comment here" />
+      <input className="comment" value={rating} onChange={e => setRating(e.target.value)} placeholder="rating" />
       <input type="submit" value="add" />
     </form>
-    <NewCommentsDetailsForm note={note} rating={rating} comments={comments}  image_id={ image_id} new_image_id={new_image_id}/>
+    <NewCommentsDetailsForm note={note} rating={rating} comments={comments}  image_id={image_id} new_image_id={new_image_id}/>
+
     </>
   );
 }

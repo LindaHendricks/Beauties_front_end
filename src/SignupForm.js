@@ -47,8 +47,9 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       .then((r) => r.json())
       .then((signUpData) => {addCreative(signUpData);
       });
+      setSignupForm(!isClicked)
       history.push(`/home`)
-       setSignupForm(!isClicked)
+       
 
     }
     
@@ -57,7 +58,7 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
 
         <form onSubmit={handleSubmit}>
 
-         <h3>Create an Account</h3>
+         <h1>Create Your Profile! </h1>
 
       <label htmlFor="firstname">Firstname</label>
       <input

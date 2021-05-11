@@ -4,7 +4,7 @@ function Comments ({note, rating, image_id, user_id, id, creative_id}) {
 
     return (
         <div className="commentdetails">
-        <p>Comments</p>
+        <h3>Comments</h3>
         <p>{note}</p>
         <p>{rating}</p>
         </div>

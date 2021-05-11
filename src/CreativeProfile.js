@@ -1,7 +1,15 @@
 // import EditCreativeProfileForm from './EditCreativeProfileForm';
 import React, {useEffect, useState} from 'react';
 import CreativeProfileCard from './CreativeProfileCard';
+import styled from "styled-components";
 
+const H1 = styled.h1`
+text-align: center;
+padding-top: 30px;
+padiing-bottom: 40px;
+font-style: italic;
+font-family: Times New Roman
+`
 
 
 function CreativeProfile({creatives, setCreatives}) {
@@ -36,7 +44,7 @@ function CreativeProfile({creatives, setCreatives}) {
     return (
          
         <div>
-            <h1>My Profile</h1>
+            <H1>My Profile</H1>
             <ul>{creativesList}</ul>
         </div>
        
