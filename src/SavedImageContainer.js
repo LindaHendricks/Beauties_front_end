@@ -1,5 +1,14 @@
 import SavedImageCard from './SavedImageCard';
 import React, {useEffect,useState} from 'react';
+import styled from "styled-components";
+
+const H1 = styled.h1`
+text-align: center;
+padding-top: 30px;
+padiing-bottom: 40px;
+font-style: italic;
+font-family: Times New Roman
+`;
 
 function SavedImageContainer({addtoSavedImageList, savedImages, setSavedImages}) {
 
@@ -27,9 +36,7 @@ function SavedImageContainer({addtoSavedImageList, savedImages, setSavedImages})
     return (
          
         <div>
-           <h2>Your Saved Images</h2>
-           <ul>{SavedImageList}</ul>
-          
+            <ul>{SavedImageList}</ul>
         </div>
        
     )

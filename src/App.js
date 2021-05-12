@@ -86,12 +86,12 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
   }
 
 
-  // useEffect(() => {  
-  //   fetch('http://localhost:3000/creatives')
-  //   .then((r) =>r.json())
-  //   .then(r => setCreatives(r)) 
+  useEffect(() => {  
+    fetch('http://localhost:3000/creatives')
+    .then((r) =>r.json())
+    .then(r => setCreatives(r)) 
 
-  //    },[])
+     },[])
 
 
 ///////////////////////////////////////////// ----- Currrent Creative User ------- //////////////////////////////////

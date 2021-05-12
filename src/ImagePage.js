@@ -5,7 +5,7 @@ import NewCommentsDetailsForm from './NewCommentsDetailsForm';
 import Comments from './Comments';
 import styled from "styled-components";
 
-const Button = styled.button`
+const Button1 = styled.button`
 background-color: white;
 font-family: Times New Roman;
 margin-top: 10px;
@@ -137,7 +137,7 @@ function ImagePage({ images, setImages, addtoLikedImageList, creativeId, image_i
         <img className="imagepage" src={imagePage.picture} alt={imagePage.title}/>
         <p>{imagePage.description}</p> </> : "hi"}
 
-        <Button className="imgdetails" onClick={handlHeartClick}>{isFav ? "♥" : "♡" }</Button>
+        <Button1 className="imgdetails" onClick={handlHeartClick}>{isFav ? "♥" : "♡" }</Button1>
         <Button2 className="imgdetails" onClick={handleClickSaved }>{isSaved ? "saved" : "save" }</Button2>
         <Comments/> 
         <NewCommentForm addComment={addComment}  image_id={image_id} new_image_id={id} comments={comments}/>

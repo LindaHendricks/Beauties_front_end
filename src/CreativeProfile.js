@@ -9,7 +9,7 @@ padding-top: 30px;
 padiing-bottom: 40px;
 font-style: italic;
 font-family: Times New Roman
-`
+`;
 
 
 function CreativeProfile({creatives, setCreatives}) {
