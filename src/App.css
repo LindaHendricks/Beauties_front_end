@@ -81,6 +81,7 @@ img {
   .imagescontainer {
    align-items: stretch;
    justify-content: space-around;
+   margin-left: 80px;
    /* flex-direction: column; */
    /* margin: 50px 50px */
   }
@@ -181,7 +182,8 @@ img {
 
   .app {
     margin: 0 auto;
-    max-width: 1200px;
+    /* max-width: 1200px; */
+
   }
 
   .searchbar {
@@ -238,6 +240,17 @@ img {
     font-size: 11px
 }
 
+.intro {
+  background: url("https://miro.medium.com/max/8960/1*0fe-_tN9aX-hyMTAGMToQA.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.signup {
+  background: url("https://miro.medium.com/max/8960/1*0fe-_tN9aX-hyMTAGMToQA.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
 
 .header {
   text-align: center;
@@ -298,7 +311,7 @@ form {
   padding: 20px;
   border: none;
   border-radius: 15px;
-  margin-top: 20px;
+  margin-top: 150px;
   border-color: rgb(230, 184, 184);
   background-color:  rgb(230, 184, 184);
   font-size: 10px;

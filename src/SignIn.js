@@ -14,7 +14,7 @@ function handleClick () {
 
     return (
          
-        <div>
+        <div className="intro">
 
            {/* <span><button id="homepage" onClick={handleClick} >Sign In</button></span>
            {isClicked? <SignInForm setCurrentCreative={setCurrentCreative} isClicked={isClicked} setSignInForm={setSignInForm}  /> : null}

@@ -1,10 +1,18 @@
 import styled from "styled-components";
 
+const Div = styled.div`
+margin: auto;
+width: 50%;
+padding: 10px;
+`
+
 const Input = styled.input`
-position: center;
+margin: auto;
+width: 50%;
+padding: 10px;
 text-align: center;
-margin-left: 435px;
-margin-top: 10px
+margin-top: 10px;
+font-size: 10px;
 `
 
 
@@ -14,10 +22,10 @@ function Search({searchTerm, setSearchTerm}) {
 
 return (
 
-<div className="searchbar">
+<Div className="searchbar">
  <label >Search Image:</label>
  <Input type="text" id="search" placeholder="Type a keyword..." value={searchTerm} onChange={(e) => setSearchTerm(e.target.value)}/>
-</div>
+</Div>
 
 
 )

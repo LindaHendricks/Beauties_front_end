@@ -17,6 +17,7 @@ import SignIn from './SignIn';
 import ImageCardDetails from './ImageCardDetails';
 import LogOut from './LogOut';
 // import NewCommentForm from './NewCommentForm';
+import SignupForm from './SignupForm';
 
 
 
@@ -153,13 +154,16 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
  
 
   return (
-    <div className="intro"> 
+    <div> 
     <div className="app">
       <Switch>
       <Route exact path="/">
-      <LandingPage addCreative={addCreative} setCreatives={setCreatives} />
+      <LandingPage  addCreative={addCreative} setCreatives={setCreatives} />
       <Signup  addCreative={addCreative} setCreatives={setCreatives} setCurrentCreative={setCurrentCreative}/>
       <SignIn setCurrentCreative={setCurrentCreative}/>
+      </Route>
+      <Route exact path="/signup">
+      <SignupForm  addCreative={addCreative} setCreatives={setCreatives} setCurrentCreative={setCurrentCreative} />
       </Route>
 
          <Route exact path="/home">

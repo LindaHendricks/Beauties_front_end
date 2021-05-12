@@ -9,7 +9,8 @@ background-color: white;
 font-family: Times New Roman;
 font-style: italic;
 margin-top: 300px;
-margin-left: 350px;
+margin-left: 400px;
+margin-bottom: 500px;
 transition-duration: 0.4s;
 padding: 0.25rem 1rem;
 font-family: Times New Roman;
@@ -51,8 +52,10 @@ function handleClickSignIn () {
     return (
          <>
         <div className="intro">
-           <span><Button className="homepage" onClick={handleClick} >Sign up!</Button></span>
-           {isClicked? <SignupForm isClicked={isClicked} setSignupForm={setSignupForm} currentCreative={currentCreative} addCreative={addCreative} setCreatives={setCreatives} /> : null}
+
+        <NavLink to={`/signup`} exact ><span><Button className="homepage" onClick={handleClick} >Sign up!</Button></span></NavLink>
+           
+           {isClicked? <SignupForm setSignupForm={setSignupForm} isClicked={isClicked} setSignupForm={setSignupForm} currentCreative={currentCreative} addCreative={addCreative} setCreatives={setCreatives} /> : null}
            {/* <span> <button onClick={handleClickSignIn} >Sign in!</button></span>
            {isClicked2? <SignInForm setSignInForm={setSignInForm} /> : null} */}
            <span><Button className="homepage" onClick={handleClickSignIn} >Sign In</Button></span>

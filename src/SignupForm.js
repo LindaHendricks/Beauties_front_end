@@ -1,5 +1,65 @@
 import React, {useState} from 'react';
 import {useHistory} from 'react-router-dom';
+import styled from "styled-components";
+
+const FormSignup = styled.form`
+  font-family: 'Times New Roman';
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+  border-color: rgb(230, 184, 184);
+  background-color:  rgb(230, 184, 184);
+  font-size: 40px;
+  text-align: center;
+  
+`
+
+const Input = styled.input `
+margin-left: 10px;
+margin-bottom: 10px;
+background-color: rgb(230, 184, 184)
+`
+
+const Input2 = styled.input `
+margin-left=70px;
+`
+
+const Label = styled.label `
+margin-left: 40px;
+margin-bottom: 50px
+`
+
+const Select = styled.select `
+margin-right: 10px;
+margin-left: 10px;
+margin-bottom: 10px;
+background-color: rgb(230, 184, 184)
+`
+
+const Input3 = styled.input`
+margin-left: 65px;
+font-size:12px;
+font-style:italic;
+transition-duration: 0.4s;
+padding: 0.25rem 1rem;
+font-family: Times New Roman;
+border: 1px solid rgb(216, 168, 168);
+cursor: pointer;
+border-radius: 15px; 
+
+  &:hover {
+    background: rgb(216, 168, 168);
+    color: white;
+    border: none;
+  }
+  &:focus {
+    background: #FFB6C1;
+    color: white;
+    border: none;
+  }
+`
+
 
 
 
@@ -46,22 +106,22 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       })
       .then((r) => r.json())
       .then((signUpData) => {addCreative(signUpData);
+        history.push(`/home`)
       });
-      setSignupForm(!isClicked)
-      history.push(`/home`)
-       
-
+      // setSignupForm(!isClicked)
+      
+      
     }
     
 
     return (
-
-        <form onSubmit={handleSubmit}>
+  <main>
+        <FormSignup  onSubmit={handleSubmit}>
 
          <h1>Create Your Profile! </h1>
 
       <label htmlFor="firstname">Firstname</label>
-      <input
+      <Input
         type="text"
         id="firstname"
         value={firstname}
@@ -69,7 +129,7 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       />
 
       <label htmlFor="lastname">Lastname</label>
-      <input
+      <Input
         type="text"
         id="lastname"
         value={lastname}
@@ -77,7 +137,7 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       />
 
       <label htmlFor="email">Email</label>
-      <input
+      <Input
         type="text"
         id="email"
         value={email}
@@ -85,7 +145,7 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       />
 
       <label htmlFor="age">Age</label>
-      <input
+      <Input
         type="integer"
         id="age"
         value={age}
@@ -93,7 +153,7 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       />
       
       <label htmlFor="username">Username</label>
-      <input
+      <Input
         type="text"
         id="username"
         value={username}
@@ -101,15 +161,15 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       />
 
       <label htmlFor="password">Password</label>
-      <input
+      <Input
         type="password"
         id="password"
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
-      <label htmlFor="avatar">Avatar Image</label>
-      <input
+      <label htmlFor="avatar">Pic</label>
+      <Input
         type="text"
         id="avatar"
         value={avatar}
@@ -118,20 +178,19 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
 
       <img
         src={avatar}
-        alt="Avatar preview"
       />
 
 
-      <label htmlFor="location">Location</label>
-      <input
+      <Label htmlFor="location">Location</Label>
+      <Input
         type="text"
         id="location"
         value={location}
         onChange={(e) => setLocation(e.target.value)}
       />
 
-      <label htmlFor="bio">Bio</label>
-      <input
+      <label htmlFor="bio">Function</label>
+      <Input
         type="text"
         id="bio"
         value={bio}
@@ -139,7 +198,7 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       />
 
       <label htmlFor="portfolio">Portfolio</label>
-      <input
+      <Input
         type="text"
         id="portfolio"
         value={portfolio}
@@ -147,19 +206,20 @@ function SignupForm ({isClicked, setSignupForm, currentCreative, addCreative, se
       />
 
 
-      <label htmlFor="type">Account Type</label>
-      <select
+      <Label htmlFor="type">Account Type</Label>
+      <Select
         id="type"
         value={accountType}
         onChange={(e) => setAccountType(e.target.value)}
       >
         <option value="admin">Admin</option>
         <option value="creative">Creative</option>
-        <option value="pro">Pro</option>
-      </select>
+      </Select>
 
-      <input type="submit" value="submit" />
-    </form>
+      <Input3 type="submit" value="submit" />
+    </FormSignup>
+
+    </main>
   );
 }
 

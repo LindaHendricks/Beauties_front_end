@@ -5,7 +5,7 @@ function LandingPage ({currentCreative,addCreative,setCreatives}) {
     
     return (
          
-        <div>
+        <div className="intro">
            <NavLink NavLink exact to="/"></NavLink>
            
 

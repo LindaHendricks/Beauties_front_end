@@ -70,7 +70,7 @@ function Header({addCreative, setCreatives,isDarkMode, onToggleDarkMode,searchTe
         <header className="header">
             <div className="inner_header">
            <Link exact to="/home"><H1b>"Beauties"</H1b></Link>
-           <H3>- Everyday, browse, like and save your next beauty inspiration -</H3>
+           <H3>- Discover, Like, Save and Share your next beauty inspiration -</H3>
            <div className="toggle-switch">
                <NavLink exact to="/"><P3>Log Out</P3></NavLink>
                <ul className="navigation">
