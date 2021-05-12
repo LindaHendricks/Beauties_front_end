@@ -7,11 +7,12 @@ import styled from "styled-components";
 const Button = styled.button`
 background-color: white;
 font-family: Times New Roman;
+font-style: italic;
 margin-top: 300px;
-transition-duration: 0.4s;
 margin-left: 350px;
+transition-duration: 0.4s;
 padding: 0.25rem 1rem;
-font-family: inherit;
+font-family: Times New Roman;
 border: 1px solid rgb(216, 168, 168);
 cursor: pointer;
 border-radius: 15px; 

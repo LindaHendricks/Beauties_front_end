@@ -15,6 +15,7 @@ import UplaodImageForm from './UplaodImageForm';
 import LandingPage from './LandingPage';
 import SignIn from './SignIn';
 import ImageCardDetails from './ImageCardDetails';
+import LogOut from './LogOut';
 // import NewCommentForm from './NewCommentForm';
 
 
@@ -162,6 +163,7 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
       </Route>
 
          <Route exact path="/home">
+          
          <Header addCreative={addCreative} setCreatives={setCreatives} searchTerm={searchTerm} setSearchTerm={setSearchTerm}/>
          <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
          <ImageContainer setSearchTerm={setSearchTerm}  addtoLikedImageList={addtoLikedImageList} addtoSavedImageList={addtoSavedImageList} setComments={setComments} ImageCards={filterImagebySearch ()} images={images} setImages={setImages} setComments={setComments} addImage={addImage} />

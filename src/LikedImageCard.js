@@ -2,6 +2,10 @@ import LikedImageCardDetails from './LikedImageCardDetails';
 import styled from "styled-components";
 import {NavLink} from "react-router-dom";
 
+const Img1 = styled.img `
+border-radius: 15px
+`
+
 const Div = styled.div `
 margin-right: 250px;
 text-align: center;
@@ -34,7 +38,7 @@ function LikedImageCard({key, id, title, picture, description, addtoLikedImageLi
         <Div>
            <H1>{title}</H1>
 
-           <NavLink to={`/images/${id}`} exact > <img src={picture}/> </NavLink>
+           <NavLink to={`/images/${id}`} exact > <Img1 src={picture}/> </NavLink>
            
 
            <LikedImageCardDetails key={key} id={id} title={title} description={description} addtoLikedImageList={addtoLikedImageList}/>

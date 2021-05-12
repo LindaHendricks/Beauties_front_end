@@ -7,15 +7,15 @@ import styled from "styled-components";
 
 const Button1 = styled.button`
 background-color: white;
-font-family: Times New Roman;
-margin-top: 10px;
 margin-left: 330px;
+font-size:12px;
+font-style:italic;
 transition-duration: 0.4s;
-padding: 0.25rem 1rem;
-font-family: inherit;
-border: 1px solid rgb(230, 184, 184);
+padding: 3px;
+font-family: Times New Roman;
+border: 1px solid rgb(216, 168, 168);
 cursor: pointer;
-border-radius: 8px; 
+border-radius: 15px; 
 
   &:hover {
     background: rgb(216, 168, 168);
@@ -27,19 +27,23 @@ border-radius: 8px;
     color: white;
     border: none;
   }
-`;
+`
+
+
+;
 
 const Button2 = styled.button`
 background-color: white;
-font-family: Times New Roman;
-margin-top: 10px;
-margin-left: 85px;
+margin-left: 80px;
+margin-rigth: 100px;
+font-size:12px;
+font-style:italic;
 transition-duration: 0.4s;
-padding: 0.25rem 1rem;
-font-family: inherit;
-border: 1px solid rgb(230, 184, 184);
+padding: 6px;
+font-family: Times New Roman;
+border: 1px solid rgb(216, 168, 168);
 cursor: pointer;
-border-radius: 8px; 
+border-radius: 15px; 
 
   &:hover {
     background: rgb(216, 168, 168);
@@ -51,7 +55,9 @@ border-radius: 8px;
     color: white;
     border: none;
   }
-`;
+`
+
+
 
 function ImagePage({ images, setImages, addtoLikedImageList, creativeId, image_id, addComment, comments}){
    
