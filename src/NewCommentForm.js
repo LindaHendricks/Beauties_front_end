@@ -1,6 +1,12 @@
 
 import React, { useState } from "react";
 import NewCommentsDetailsForm from "./NewCommentsDetailsForm";
+import styled from "styled-components";
+
+const Form6 = styled.form`
+margin-bottom: 20px;
+margin-top: 10px
+`
 
 
 function NewCommentForm({setComments,addComment, image_id, comments, new_image_id}) {
@@ -42,11 +48,11 @@ function handleSubmit (event) {
 
   return (
     <>
-       <form className="comment" new_image_id={new_image_id} onSubmit={handleSubmit} className="newcomment">
+       <Form6 className="comment" new_image_id={new_image_id} onSubmit={handleSubmit} className="newcomment">
       <input className="comment" value={note} onChange={e => setNote(e.target.value)} placeholder="Your comment here" />
       <input className="comment" value={rating} onChange={e => setRating(e.target.value)} placeholder="rating" />
       <input type="submit" value="add" />
-    </form>
+    </Form6>
     <NewCommentsDetailsForm note={note} rating={rating} comments={comments}  image_id={image_id} new_image_id={new_image_id}/>
 
     </>

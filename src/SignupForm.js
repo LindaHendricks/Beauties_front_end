@@ -12,6 +12,7 @@ const FormSignup = styled.form`
   background-color:  rgb(230, 184, 184);
   font-size: 40px;
   text-align: center;
+  margin-top: 10px;
   
 `
 

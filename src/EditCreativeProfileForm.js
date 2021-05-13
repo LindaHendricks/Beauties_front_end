@@ -1,4 +1,65 @@
 import React, {useState} from 'react';
+import styled from "styled-components";
+
+const EditFormSignup = styled.form`
+  font-family: 'Times New Roman';
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  width: 100%;
+  border-color: rgb(230, 184, 184);
+  background-color:  rgb(230, 184, 184);
+  font-size: 40px;
+  text-align: center;
+  margin-top: 10px;
+`
+
+const Input = styled.input `
+margin-left: 10px;
+margin-bottom: 10px;
+background-color: rgb(230, 184, 184)
+`
+
+const Input2 = styled.input `
+margin-left=70px;
+`
+
+const Label = styled.label `
+margin-left: 40px;
+margin-bottom: 50px
+`
+
+const Select = styled.select `
+margin-right: 10px;
+margin-left: 10px;
+margin-bottom: 10px;
+background-color: rgb(230, 184, 184)
+`
+
+const Input3 = styled.input`
+margin-left: 65px;
+font-size:12px;
+font-style:italic;
+transition-duration: 0.4s;
+padding: 0.25rem 1rem;
+font-family: Times New Roman;
+border: 1px solid rgb(216, 168, 168);
+cursor: pointer;
+border-radius: 15px; 
+
+  &:hover {
+    background: rgb(216, 168, 168);
+    color: white;
+    border: none;
+  }
+  &:focus {
+    background: #FFB6C1;
+    color: white;
+    border: none;
+  }
+`
+
+
 
 
 function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfile}) {
@@ -49,12 +110,12 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
    
     return (
          
-        <form onSubmit={handleEditSubmit}>
+        <EditFormSignup onSubmit={handleEditSubmit}>
 
          <h3>Create an Account</h3>
 
       <label htmlFor="firstname">Firstname</label>
-      <input
+      <Input
         type="text"
         id="firstname"
         value={firstname}
@@ -62,7 +123,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
       />
 
       <label htmlFor="lastname">Lastname</label>
-      <input
+      <Input
         type="text"
         id="lastname"
         value={lastname}
@@ -70,7 +131,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
       />
 
       <label htmlFor="email">Email</label>
-      <input
+      <Input
         type="text"
         id="email"
         value={email}
@@ -78,7 +139,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
       />
 
       <label htmlFor="age">Age</label>
-      <input
+      <Input
         type="integer"
         id="age"
         value={age}
@@ -86,7 +147,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
       />
       
       <label htmlFor="username">Username</label>
-      <input
+      <Input
         type="text"
         id="username"
         value={username}
@@ -94,7 +155,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
       />
 
       <label htmlFor="password">Password</label>
-      <input
+      <Input
         type="password"
         id="password"
         value={password}
@@ -102,7 +163,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
       />
 
       <label htmlFor="avatar">Avatar Image</label>
-      <input
+      <Input
         type="text"
         id="avatar"
         value={avatar}
@@ -111,12 +172,11 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
 
       <img
         src={avatar}
-        alt="Avatar preview"
       />
 
 
       <label htmlFor="location">Location</label>
-      <input
+      <Input
         type="text"
         id="location"
         value={location}
@@ -124,7 +184,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
       />
 
       <label htmlFor="bio">Bio</label>
-      <input
+      <Input
         type="text"
         id="bio"
         value={bio}
@@ -132,7 +192,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
       />
 
       <label htmlFor="portfolio">Portfolio</label>
-      <input
+      <Input
         type="text"
         id="portfolio"
         value={portfolio}
@@ -141,21 +201,18 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
 
 
       <label htmlFor="type">Account Type</label>
-      <select
+      <Select
         id="type"
         value={accountType}
         onChange={(e) => setAccountType(e.target.value)}
       >
         <option value="admin">Admin</option>
         <option value="creative">Creative</option>
-        <option value="pro">Pro</option>
-      </select>
+      </Select>
 
-      <input type="submit" value="submit" />
-    </form>
-  );
-       
-        
+      <Input3 type="submit" value="submit" />
+    </EditFormSignup>
+  );         
 }
  
 export default EditCreativeProfileForm;
