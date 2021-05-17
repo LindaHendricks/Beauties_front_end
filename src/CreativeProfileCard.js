@@ -41,7 +41,7 @@ background-color: white;
 font-family: Times New Roman;
 margin-top: 10px;
 margin-bottom: 20px;
-margin-left: 450px;
+margin-left: 552px;
 transition-duration: 0.4s;
 padding-left:30px;
 padding-top: 5px;

@@ -74,11 +74,11 @@ function Header({addCreative, setCreatives,isDarkMode, onToggleDarkMode,searchTe
            <div className="toggle-switch">
                <NavLink exact to="/"><P3>Log Out</P3></NavLink>
                <ul className="navigation">
-               <NavLink exact to="/UploadImages"><Li>"Share Ideas"</Li></NavLink>
-               <NavLink exact to="/saved_images"><Li>"Save Ideas"</Li></NavLink>
-               <NavLink exact to="/liked_images"><Li>"Like Ideas"</Li></NavLink>
+               <NavLink exact to="/UploadImages"><Li>"Share ideas"</Li></NavLink>
+               <NavLink exact to="/saved_images"><Li>"Saved ideas"</Li></NavLink>
+               <NavLink exact to="/liked_images"><Li>"Liked ideas"</Li></NavLink>
                <NavLink exact to="/profile"><Li>"My profile"</Li></NavLink>
-               <Li>"About us"</Li>
+               <Li>"About"</Li>
                </ul>
            
            {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}

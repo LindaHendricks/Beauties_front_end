@@ -59,6 +59,14 @@ border-radius: 15px;
   }
 `
 
+const H1 = styled.h1`
+text-align: center;
+padding-top: 30px;
+padiing-bottom: 40px;
+font-style: italic;
+font-family: Times New Roman
+font-size: 12px;
+`;
 
 
 
@@ -112,7 +120,7 @@ function EditCreativeProfileForm({handleUpdateCreativeProfile,id,setUpdatedProfi
          
         <EditFormSignup onSubmit={handleEditSubmit}>
 
-         <h3>Create an Account</h3>
+         <H1>Update your profile</H1>
 
       <label htmlFor="firstname">Firstname</label>
       <Input

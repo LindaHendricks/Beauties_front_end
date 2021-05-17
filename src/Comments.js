@@ -1,12 +1,20 @@
+import styled from "styled-components";
+
+const P45 = styled.p `
+font-size: 12px;
+margin-botton: 0;
+font-style: italic;
+padding-bottom: 0px
+
+`
+
 
 
 function Comments ({note, rating, image_id, user_id, id, creative_id}) {
 
     return (
-        <div className="commentdetails">
-        <h3>Comments</h3>
-        <p>{note}</p>
-        <p>{rating}</p>
+        <div>
+        <span><P45><strong>--- Comment:</strong>{note}<strong> ---- Rating:</strong>{rating}* </P45></span>
         </div>
     )
 

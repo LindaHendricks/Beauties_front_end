@@ -29,14 +29,14 @@ font-family: Times New Roman
 
 function SavedImageCard({key,id, title, picture, description, addtoSavedImageList, setSavedImages}) {
     return (
-        <main>
+       
            
              <Div1>
            <HH1>{title}</HH1>
            <SavedImageCardDetails key={key} id={id} title={title} picture={picture} description={description} setSavedImages={setSavedImages}/>
         </Div1>
 
-        </main> 
+       
        
        
     )

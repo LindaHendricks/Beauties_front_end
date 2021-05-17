@@ -102,7 +102,7 @@ function UplaodImageForm({addImage}) {
   
     return (
       <form  onSubmit={handleSubmit}>
-        <h1>Upload an Image</h1>
+        <h1>Share your ideas here:</h1>
         <label htmlFor="Title">Title</label>
         <Input
           type="text"

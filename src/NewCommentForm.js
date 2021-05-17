@@ -5,7 +5,16 @@ import styled from "styled-components";
 
 const Form6 = styled.form`
 margin-bottom: 20px;
-margin-top: 10px
+margin-top: 5px
+`
+
+const H6 = styled.h6 `
+text-align: center;
+padding-top: 30px;
+font-style: italic;
+font-family: Times New Roman;
+color: rgb(230, 184, 184);
+font-size: 20px
 `
 
 
@@ -48,6 +57,7 @@ function handleSubmit (event) {
 
   return (
     <>
+       <H6>Share your opinion:</H6>
        <Form6 className="comment" new_image_id={new_image_id} onSubmit={handleSubmit} className="newcomment">
       <input className="comment" value={note} onChange={e => setNote(e.target.value)} placeholder="Your comment here" />
       <input className="comment" value={rating} onChange={e => setRating(e.target.value)} placeholder="rating" />

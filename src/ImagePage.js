@@ -145,8 +145,9 @@ function ImagePage({ images, setImages, addtoLikedImageList, creativeId, image_i
 
         <Button1 className="imgdetails" onClick={handlHeartClick}>{isFav ? "♥" : "♡" }</Button1>
         <Button2 className="imgdetails" onClick={handleClickSaved }>{isSaved ? "saved" : "save" }</Button2>
-        <Comments/> 
+        
         <NewCommentForm addComment={addComment}  image_id={image_id} new_image_id={id} comments={comments}/>
+        {/* <Comments/>  */}
         </div>
        
     )

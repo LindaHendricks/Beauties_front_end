@@ -108,7 +108,7 @@ useEffect(() => { fetch(`http://localhost:3000/comments`)
 
      function addImage(newImage) {
        console.log(newImage)
-      const updatedImagesList = [...images,newImage]
+      const updatedImagesList = [newImage,...images]
       console.log(updatedImagesList)
       setImages(updatedImagesList)
   }
