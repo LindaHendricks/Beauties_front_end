@@ -63,12 +63,11 @@ function ImagePage({
   addComment,
   comments,
 }) {
-  // {addtoLikedImageList, title, picture, creativeId, image_id, description, addComment, comments}
 
   const [imagePage, setImagePage] = useState(null);
   const [isFav, setIsFavorited] = useState(false);
   const [isSaved, setIsSaved] = useState(false);
-  // const [isLoaded, setIsLoaded] = useState(false)
+  
   const { id } = useParams();
   console.log(id);
   console.log(imagePage);
@@ -77,12 +76,8 @@ function ImagePage({
     fetch(`http://localhost:3000/images/${id}`)
       .then((response) => response.json())
       .then((imagePage) => setImagePage(imagePage));
-    // setIsLoaded(true)
+   
   }, [id]);
-
-  // if (!isLoaded) return <h2>Loading...</h2>;
-
-  // const { title, description, picture} = imagePage
 
   function handleClickSaved() {
     setIsSaved(!isSaved);
@@ -157,7 +152,6 @@ function ImagePage({
         new_image_id={id}
         comments={comments}
       />
-      {/* <Comments/>  */}
     </div>
   );
 }

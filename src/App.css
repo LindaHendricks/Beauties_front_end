@@ -1,243 +1,15 @@
-/* 
-.imageitem {
-    
-    display: flexbox;
-    margin: 1em 1em 1em 2em;
-    width: 100%
-}
 
-img {
-    cursor: pointer;
-    width: 10%;
-    border-radius: 15px;
-    height:auto
+.app {
+  margin: 0 auto;
 }
 
 
-  .imgitem {
-      width: 20%;
-      float: right; 
-      margin: 0px 0px 15px 15px
-  }
-
-.imgdetails {
-      border : 1px solid;
-      border-color: rgb(235, 181, 181);
-      border-radius: 15px;
-      padding: 15px 15px 15px 15px;
-      margin: ablsolute;
-      width: 19%
-  }
-
-  .imgdetails h4 {
-    text-align: center;
-    color: rgb(235, 181, 181);
-    padding: 0;
-    font-size: 13 px
-}
-
-
-
-
-.imgdetails button {
-    position: center;
-    margin: auto;
-    display: grid;
-    background-color: white;
-    font-size: 11px
-}
-
-
-  img {
-      width: 23%;
-      border-radius: 25px;
-      height:auto;
-      padding: 15px 15px 15px 15px
-  } 
-
-  input {
-    position: relative;
-    text-align: center;
-    border-radius: 50px;
-    border-color: white
-  }
-
-  .searchbar {
-      text-align: center;
-      padding: 50px;
-  }
-
-
-
-.inner_header{
-    width: 1000px;
-    height: 100%;
-    display: block;
-    margin: 0 auto;
-}
-  */
-
-
-  .imagescontainer {
-   align-items: stretch;
-   justify-content: space-around;
-   margin-left: 80px;
-   /* flex-direction: column; */
-   /* margin: 50px 50px */
-  }
-
-  .new-img-form {
-    padding: 2rem 1rem;
-    margin: 2rem 0;
-    background-color: rgba(245, 204, 204);
-  }
-
-  /* .imgitem {
-  display: inline;
-  background-repeat: no-repeat;
-  background-position: center 90%;
-  float: left;
-  margin: 2%;
-  padding: 1%;
-  outline: #3B0B0B dotted thick;
-  transition: 0.75s;
-  opacity: 1;
-    
-  }
-
-  img {
-    display: flex;
-    flex-basis: 20%;
-    border-radius: 3px;
-    padding: 30px  30px  30px  30px ;
-    height: 20%; */
-    
-    /* margin: 50px 50px */
-
-    /* padding: 15px 15px 15px 15px */
-  /* }
-
-  .header {
-    display: flex;
-    flex-basis:  100%;
-    /* height: 100%; */
-    /* display: block; */
-    /* background-color:rgb(235, 181, 181);
-}  */
-
- .imgitem {
-    list-style: none;
-    display: flexbox;
-    margin: 1em 1em 1em 2em;
-    width: 100%
-  }
-  
-  .card {
-    margin: 1rem;
-    display: flexbox;
-    margin: 1em 1em 1em 2em;
-    width: 100%
-  }
-  
-  img {
-    flex: 1;
-    width: 25%;
-    border-radius: 10%;
-    margin: 0px 0px 0px 0px;
-    padding: 20px
-  }
-/*   
-  button {
-    margin-top: 0.5rem;
-  } */
-
-  * {
-    margin: auto;
-    padding: 0;
-    box-sizing: border-box;
-  }
-
- /* button {
-  background-color: white;
-  color: black;
-  border: 2px solid #4CAF50; /* Green */
-    /* padding: 0.25rem 1rem;
-    font-family: inherit;
-    border: none;
-    cursor: pointer;
-    border-radius: 15px; */
-    /* margin-top: 120px;
-    margin-left: 350px
-  } */ 
-
-
-
-  .comment input {
-    padding: 0.25rem 1rem;
-    font-family: inherit;
-    border: none;
-    cursor: pointer;
-
-  }
-
-  .app {
-    margin: 0 auto;
-    /* max-width: 1200px; */
-
-  }
-
-  .searchbar {
-    padding: 1rem;
-    display: flex;
-    flex-direction: column;
-    
-  }
-
-  .searchbar label {
-    padding-top: 10px;
-    display: flex;
-    font-family: 'Times New Roman', Times, serif;
-    
-  }
-
-  input {
-    padding: 0.25rem;
-    border: none;
-    font-family: 'Times New Roman';
-    font-size: 8px;
-    border-bottom: 1px solid rgb(216, 168, 168);
-    transition: all 0.2s;
-    width: 25%;
-    position: center;
-    border-radius: 5px;
-    margin-left: 5px;
-    font-style: italic
-    /* padding-bottom: 0.25rem; */
-  }
-
-  main {
-    /* padding: 0 1rem; */
-    margin: 0;
-    border-radius: 15px;
-    padding: 5px;
-    /* background-color: rgba(235, 181, 181, 0.242); */
-    display: flex;
-    margin: 40px 40px 40px 40px;
-  }
-
-  .imgdetails {
-    flex: 1;
-    border : 1px solid;
-    border-color: rgba(235, 181, 181, 0.242);
-    border-radius: 15px;
-    padding: 15px 15px 15px 15px;
-    margin: ablsolute;
-    width: 19%
-}
-
-.imgdetails p {
-    text-align: center;
-    font-size: 11px
+main {
+  margin: 0;
+  border-radius: 15px;
+  padding: 5px;
+  display: flex;
+  margin: 40px 40px 40px 40px;
 }
 
 .intro {
@@ -257,39 +29,40 @@ img {
   width: 100%;
   height: 220px;
   display: block;
-  background:  rgba(235, 181, 181, 0.242); 
-  border-radius: 15px; 
+  background: rgba(235, 181, 181, 0.242);
+  border-radius: 15px;
 }
 
-.inner_header{
+.inner_header {
   width: 1000px;
   height: 100%;
   display: block;
-  margin: auto;  
+  margin: auto;
 }
 
 .header h3 {
   padding-bottom: 40px;
-  padding-top:0px;
-  font-family: 'Times New Roman';
+  padding-top: 0px;
+  font-family: "Times New Roman";
   font-style: italic;
-  font-size: 12px
-  
+  font-size: 12px;
 }
 
 .header h1 {
-  padding: 10px ;
-  font-family: 'Times New Roman';
-  
+  padding: 10px;
+  font-family: "Times New Roman";
 }
 
-a:hover, a:visited, a:link, a:active {
-color: black;
-text-decoration: none
+a:hover,
+a:visited,
+a:link,
+a:active {
+  color: black;
+  text-decoration: none;
 }
 
 .header NavLink {
-  margin-left: 10px ;
+  margin-left: 10px;
 }
 
 .navigation {
@@ -302,57 +75,61 @@ text-decoration: none
   display: table;
   float: right;
   padding: 0px 55px;
-  font-family: 'Times New Roman';
+  font-family: "Times New Roman";
 }
 
-form {
-  font-family: 'Times New Roman';
-  max-width: 550px;
+.imagescontainer {
+  align-items: stretch;
+  justify-content: space-around;
+  margin-left: 80px;
+}
+
+.new-img-form {
+  padding: 2rem 1rem;
+  margin: 2rem 0;
+  background-color: rgba(245, 204, 204);
+}
+
+.imgitem {
+  list-style: none;
+  display: flexbox;
+  margin: 1em 1em 1em 2em;
+  width: 100%;
+}
+
+
+img {
+  flex: 1;
+  width: 25%;
+  border-radius: 10%;
+  margin: 0px 0px 0px 0px;
   padding: 20px;
-  border: none;
+}
+
+.imgdetails {
+  flex: 1;
+  border: 1px solid;
+  border-color: rgba(235, 181, 181, 0.242);
   border-radius: 15px;
-  margin-top: 150px;
-  border-color: rgb(230, 184, 184);
-  background-color:  rgb(230, 184, 184);
-  font-size: 10px;
-  text-align: center
+  padding: 15px 15px 15px 15px;
+  margin: ablsolute;
+  width: 19%;
 }
 
-form h1 {
+.imgdetails p {
   text-align: center;
-  margin-bottom: 40px;
-  margin-top: 0px;
-  padding-top: 10px;
-  font-style: italic;
-  
-}
-
-form  p {
-  text-align: justify;
-  margin-bottom: 40px;
-  margin: 30px;
-  padding-top: 10px;
-  font-style: italic;
-  
-}
-
-form  label {
-  text-align: justify;
-  font-style: italic;
-  font-size: 12px;
-  /* margin: 30px 30px 30px 30px; */
-  margin-left: 10%
+  font-size: 11px;
 }
 
 .imagepage p {
-  font-family: 'Times New Roman';
+  font-family: "Times New Roman";
   text-align: center;
   margin-bottom: 20px;
   color: rgb(36, 35, 35);
 }
 
 .imagepage h1 {
-  font-family: 'Times New Roman';
+  font-family: "Times New Roman";
   text-align: center;
   margin-bottom: 20px;
   margin-top: 40px;
@@ -366,6 +143,94 @@ form  label {
   width: 50%;
 }
 
+.imagepage h1 {
+  font-family: "Times New Roman";
+  padding-top: 20px;
+  text-align: center;
+}
+
+.card {
+  margin: 1rem;
+  display: flexbox;
+  margin: 1em 1em 1em 2em;
+  width: 100%;
+}
+
+* {
+  margin: auto;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+input {
+  padding: 0.25rem;
+  border: none;
+  font-family: "Times New Roman";
+  font-size: 8px;
+  border-bottom: 1px solid rgb(216, 168, 168);
+  transition: all 0.2s;
+  width: 25%;
+  position: center;
+  border-radius: 5px;
+  margin-left: 5px;
+  font-style: italic;
+}
+
+.comment input {
+  padding: 0.25rem 1rem;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+.searchbar {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.searchbar label {
+  padding-top: 10px;
+  display: flex;
+  font-family: "Times New Roman", Times, serif;
+}
+
+form {
+  font-family: "Times New Roman";
+  max-width: 550px;
+  padding: 20px;
+  border: none;
+  border-radius: 15px;
+  margin-top: 150px;
+  border-color: rgb(230, 184, 184);
+  background-color: rgb(230, 184, 184);
+  font-size: 10px;
+  text-align: center;
+}
+
+form h1 {
+  text-align: center;
+  margin-bottom: 40px;
+  margin-top: 0px;
+  padding-top: 10px;
+  font-style: italic;
+}
+
+form p {
+  text-align: justify;
+  margin-bottom: 40px;
+  margin: 30px;
+  padding-top: 10px;
+  font-style: italic;
+}
+
+form label {
+  text-align: justify;
+  font-style: italic;
+  font-size: 12px;
+  margin-left: 10%;
+}
+
 .commentdetails h3 {
   border-radius: 8px;
   border: 1px solid;
@@ -374,34 +239,22 @@ form  label {
   font-style: italic;
   font-style: bold;
   text-align: center;
-  font-family: 'Times New Roman';
-  margin-top: 20px
+  font-family: "Times New Roman";
+  margin-top: 20px;
 }
 
 .commentdetails p {
   font-style: bold;
 }
 
-/* .imgdetails button {
-  padding-top: 20px; */
-  
-/* } */
-
-.imagepage h1 {
-  font-family: 'Times New Roman';
-  padding-top: 20px;
-  text-align: center
-
-}
 
 select {
   padding: 0.25rem;
   border: none;
-  font-family: 'Times New Roman';
+  font-family: "Times New Roman";
   font-size: 8px;
   border-bottom: 1px solid rgb(216, 168, 168);
   transition: all 0.2s;
   width: 25%;
   position: center;
 }
-
