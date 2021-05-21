@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import { useHistory } from "react-router-dom";
 
-
-function SignInForm({isClicked2, setSignInForm, setCurrentCreative}) {
+function SignInForm({ isClicked2, setSignInForm, setCurrentCreative }) {
   const [formData, setFormData] = useState({
     username: "",
-    password: ""
+    password: "",
   });
   const [errors, setErrors] = useState([]);
   const history = useHistory();
@@ -16,21 +15,19 @@ function SignInForm({isClicked2, setSignInForm, setCurrentCreative}) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    // request => POST /login
     fetch("http://localhost:3000/signin", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Accept": "application/json"
+        Accept: "application/json",
       },
       body: JSON.stringify(formData),
-      
-    }) 
+    })
       .then((response) => response.json())
-      .then((user) => setCurrentCreative(user))
+      .then((user) => setCurrentCreative(user));
 
-      setSignInForm(!isClicked2)
-      history.push(`/home`)
+    setSignInForm(!isClicked2);
+    history.push(`/home`);
   }
 
   return (
@@ -43,7 +40,7 @@ function SignInForm({isClicked2, setSignInForm, setCurrentCreative}) {
           value={formData.username}
           onChange={handleChange}
         />
-        <label className="signinform" >Password</label>
+        <label className="signinform">Password</label>
         <input
           className="signinform"
           type="password"
@@ -64,5 +61,3 @@ function SignInForm({isClicked2, setSignInForm, setCurrentCreative}) {
 }
 
 export default SignInForm;
-
- 

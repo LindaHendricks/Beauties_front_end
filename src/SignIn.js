@@ -1,28 +1,14 @@
-import React, {useState} from 'react';
-import SignInForm from './SignInForm';
+import React, { useState } from "react";
+import SignInForm from "./SignInForm";
 
+function SignIn({ setCurrentCreative }) {
+  const [isClicked, setSignInForm] = useState(false);
 
-////////////SetCurrentCreative/////
-function SignIn({setCurrentCreative}) {
+  function handleClick() {
+    setSignInForm(!isClicked);
+  }
 
-    const [isClicked, setSignInForm] = useState(false)
-
-function handleClick () {
-    setSignInForm(!isClicked)
+  return <div className="intro"></div>;
 }
 
-
-    return (
-         
-        <div className="intro">
-
-           {/* <span><button id="homepage" onClick={handleClick} >Sign In</button></span>
-           {isClicked? <SignInForm setCurrentCreative={setCurrentCreative} isClicked={isClicked} setSignInForm={setSignInForm}  /> : null}
-                       */}
-        </div>
-       
-    )///////SetCurrentCreative={SetCurrentCreative}/////////
-        
-}
- 
 export default SignIn;
