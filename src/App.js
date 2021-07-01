@@ -114,7 +114,8 @@ function App() {
 
   ////////////////////////////////////////////////////// --- IMAGE CARDS --- ////////////////////////////////////////////
 
-  const ImageCards = images.map((image) => (
+  const ImageCards = images.map((image) =>(
+    
     <ImageCard
       key={image.id}
       image_id={image.id}
