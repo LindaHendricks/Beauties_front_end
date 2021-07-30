@@ -5,6 +5,7 @@ import SignInForm from "./SignInForm";
 import styled from "styled-components";
 
 const Button = styled.button`
+  color: white;
   background-color: transparent;
   font-family: Times New Roman;
   font-style: italic;

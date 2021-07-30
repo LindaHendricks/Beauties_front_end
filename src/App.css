@@ -12,15 +12,19 @@ main {
 }
 
 .intro {
-  background: url("https://miro.medium.com/max/8960/1*0fe-_tN9aX-hyMTAGMToQA.jpeg");
+  background-image: url("https://miro.medium.com/max/8960/1*0fe-_tN9aX-hyMTAGMToQA.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .signup {
   background: url("https://miro.medium.com/max/8960/1*0fe-_tN9aX-hyMTAGMToQA.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
 }
 
 .header {
