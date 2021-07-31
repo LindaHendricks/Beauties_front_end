@@ -37,6 +37,10 @@ const Select = styled.select`
   background-color: rgb(230, 184, 184);
 `;
 
+const hTitleForm = styled.h1`
+  color: white;
+`;
+
 const Input3 = styled.input`
   margin-left: 65px;
   font-size: 12px;
